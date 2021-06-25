@@ -13,6 +13,7 @@ namespace FuelStationManagementSystem.Impl
         public Guid CustomerID { get; set; }
         public decimal DiscountValue { get; set; }
         public decimal TotalValue { get; set; }
+        public List<TransactionLine> TransactionLines { get; set; }
 
         public Transaction() : base()
         {

@@ -56,7 +56,8 @@
     </Compile>
     <Compile Include="Impl\Customer.cs" />
     <Compile Include="Impl\Employee.cs" />
-    <Compile Include="Impl\Items.cs" />
+    <Compile Include="Impl\FuelStation.cs" />
+    <Compile Include="Impl\Item.cs" />
     <Compile Include="Impl\ItemTypeEnum.cs" />
     <Compile Include="Impl\Ledger.cs" />
     <Compile Include="Impl\Transaction.cs" />

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FuelStationManagementSystem.Impl {
-    public class Items : Entity {
+    public class Item : Entity {
 
         public string Code { get; set; }
         public string Description { get; set; }
@@ -14,7 +14,7 @@ namespace FuelStationManagementSystem.Impl {
         public decimal Price { get; set; }
         public decimal Cost { get; set; }
 
-        public Items() : base() {
+        public Item() : base() {
 
         }
 
