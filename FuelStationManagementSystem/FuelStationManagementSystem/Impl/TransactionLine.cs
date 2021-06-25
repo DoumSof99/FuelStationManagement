@@ -14,7 +14,7 @@ namespace FuelStationManagementSystem.Impl {
         public decimal ItemPrice { get; set; }
         public decimal Value { get; set; }
 
-        public TransactionLine() {
+        public TransactionLine() : base() {
 
         }
 
