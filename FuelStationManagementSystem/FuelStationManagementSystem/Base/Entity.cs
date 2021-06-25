@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FuelStationManagementSystem
-{
-    public class Entity
-    {
+
+namespace FuelStationManagementSystem.Base {
+    public class Entity {
+
         public Guid ID { get; set; }
 
+        public Entity() {
+            ID = Guid.NewGuid();
+        }
     }
 }
