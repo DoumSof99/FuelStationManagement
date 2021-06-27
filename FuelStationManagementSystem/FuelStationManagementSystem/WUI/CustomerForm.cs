@@ -21,6 +21,10 @@ namespace FuelStationManagementSystem.WUI
             InitializeComponent();
         }
 
+        private void CustomerForm_Load(object sender, EventArgs e) {       
+            Populate();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e) {
             AddCustomer();
 
@@ -30,11 +34,28 @@ namespace FuelStationManagementSystem.WUI
 
         }
 
+        private void Populate() {
+            try {
+                Con.Open();
+                string MyQuery = "SELECT Name, Surname, CardNumber FROM Customer";
+                SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
+                SqlCommandBuilder builder = new SqlCommandBuilder(da);
+                var ds = new DataSet();
+                da.Fill(ds);
+                gridControl.DataSource = ds.Tables[0];
+                Con.Close();
+            }
+            catch (Exception) {
+
+                throw;
+            }
+        }
+
         private void AddCustomer() {
             //if (!string.IsNullOrWhiteSpace(ctrlName.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlSurname.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlCardNumber.Text)){
             string custName = Convert.ToString(ctrlName.Text);
             string custSurname = Convert.ToString(ctrlSurname.Text);
-            int custCardNumber = Convert.ToInt32(ctrlCardNumber.Text);
+            string custCardNumber = Convert.ToString(ctrlCardNumber.Text);
 
 
             try {
@@ -54,6 +75,6 @@ namespace FuelStationManagementSystem.WUI
             //}
         }
 
-        
+       
     }
 }

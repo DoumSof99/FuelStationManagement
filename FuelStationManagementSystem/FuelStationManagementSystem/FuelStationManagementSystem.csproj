@@ -59,6 +59,21 @@
   <ItemGroup>
     <Compile Include="Base\Entity.cs" />
     <Compile Include="Base\Person.cs" />
+    <Compile Include="FuelStationManagementDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FuelStationManagementDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FuelStationManagementDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FuelStationManagementDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="FuelStationManagementDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +112,39 @@
     <EmbeddedResource Include="WUI\CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="FuelStationManagementDataSet.xsc">
+      <DependentUpon>FuelStationManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FuelStationManagementDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FuelStationManagementDataSet.xss">
+      <DependentUpon>FuelStationManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet1.xsc">
+      <DependentUpon>FuelStationManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FuelStationManagementDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FuelStationManagementDataSet1.xss">
+      <DependentUpon>FuelStationManagementDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet2.xsc">
+      <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FuelStationManagementDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FuelStationManagementDataSet2.xss">
+      <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
