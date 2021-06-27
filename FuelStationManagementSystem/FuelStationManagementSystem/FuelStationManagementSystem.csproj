@@ -64,6 +64,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FuelStationManagementDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WUI\ItemForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WUI\ItemForm.Designer.cs">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +107,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WUI\ItemForm.resx">
+      <DependentUpon>ItemForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -112,6 +126,17 @@
     </None>
     <None Include="FuelStationManagementDataSet.xss">
       <DependentUpon>FuelStationManagementDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet2.xsc">
+      <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FuelStationManagementDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FuelStationManagementDataSet2.xss">
+      <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

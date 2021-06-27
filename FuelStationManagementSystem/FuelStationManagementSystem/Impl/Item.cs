@@ -18,5 +18,15 @@ namespace FuelStationManagementSystem.Impl {
 
         }
 
+        public Item(string code, string description, ItemTypeEnum itemType, 
+            decimal price, decimal cost) : base(){
+            Code = code;
+            Description = description;
+            this.ItemType = itemType;
+            Price = price;
+            Cost = cost;
+
+        }
+
     }
 }

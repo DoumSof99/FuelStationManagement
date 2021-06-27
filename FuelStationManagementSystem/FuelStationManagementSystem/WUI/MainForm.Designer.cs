@@ -77,7 +77,7 @@ namespace FuelStationManagementSystem {
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // customerToolStripMenuItem
@@ -93,19 +93,19 @@ namespace FuelStationManagementSystem {
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(96, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // viewToolStripMenuItem
             // 
             this.viewToolStripMenuItem.Name = "viewToolStripMenuItem";
-            this.viewToolStripMenuItem.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.viewToolStripMenuItem.Text = "View";
             // 
             // employeeToolStripMenuItem
@@ -148,18 +148,19 @@ namespace FuelStationManagementSystem {
             // addToolStripMenuItem2
             // 
             this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
-            this.addToolStripMenuItem2.Size = new System.Drawing.Size(99, 22);
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem2.Text = "Add";
+            this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(96, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
             // 
             // viewToolStripMenuItem2
             // 
             this.viewToolStripMenuItem2.Name = "viewToolStripMenuItem2";
-            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.viewToolStripMenuItem2.Text = "View";
             // 
             // transactionToolStripMenuItem
@@ -169,7 +170,7 @@ namespace FuelStationManagementSystem {
             this.toolStripMenuItem4,
             this.viewToolStripMenuItem3});
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
-            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.transactionToolStripMenuItem.Text = "Transaction";
             // 
             // addToolStripMenuItem3

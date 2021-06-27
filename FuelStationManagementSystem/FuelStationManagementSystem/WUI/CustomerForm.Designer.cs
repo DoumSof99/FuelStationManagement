@@ -45,7 +45,7 @@ namespace FuelStationManagementSystem.WUI
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.gridCustomers = new DevExpress.XtraGrid.GridControl();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-             this.gridViewCustomers = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewCustomers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -260,9 +260,6 @@ namespace FuelStationManagementSystem.WUI
             // 
             this.customerBindingSource.DataMember = "Customer";
             // 
-            // fuelStationManagementDataSet2
-            // 
-            // 
             // gridViewCustomers
             // 
             this.gridViewCustomers.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
@@ -348,9 +345,6 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl6.Size = new System.Drawing.Size(111, 21);
             this.labelControl6.TabIndex = 35;
             this.labelControl6.Text = "Card Number:";
-            // 
-            // customerTableAdapter
-            // 
             // 
             // CustomerForm
             // 

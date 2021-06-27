@@ -26,6 +26,9 @@ namespace FuelStationManagementSystem {
             AddCustomer();
         }
 
+        private void addToolStripMenuItem2_Click(object sender, EventArgs e) {
+            AddItems();
+        }
         #endregion
 
         #region methods
@@ -37,8 +40,15 @@ namespace FuelStationManagementSystem {
             customerForm.ShowDialog();
         }
 
+        private void AddItems() {
+            ItemForm itemForm = new ItemForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            itemForm.Con = _SqlConnection;
+            itemForm.ShowDialog();
+        }
+
         #endregion
 
-
+       
     }
 }
