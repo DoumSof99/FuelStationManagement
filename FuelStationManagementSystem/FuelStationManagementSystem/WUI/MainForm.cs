@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -14,6 +15,10 @@ namespace FuelStationManagementSystem {
         public MainForm() {
             InitializeComponent();
         }
+
+        public string ConnectionString { get => ctrlConnection.Text; set => ConnectionString = value; }
+        private SqlConnection _SqlConnection;
+
 
         #region Events
 
@@ -27,8 +32,9 @@ namespace FuelStationManagementSystem {
 
         private void AddCustomer() {
             CustomerForm customerForm = new CustomerForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            customerForm.Con = _SqlConnection;
             customerForm.ShowDialog();
-
         }
 
         #endregion

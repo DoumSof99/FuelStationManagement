@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using FuelStationManagementSystem.Impl;
 
 namespace FuelStationManagementSystem.WUI
 {
     public partial class CustomerForm : Form
     {
 
-        SqlConnection Con = new SqlConnection(@"Data Source=DESKTOP-O3H1CKS\SQLCS412_SOFIA;Initial Catalog=FuelStationManagement;Integrated Security=True");
+        //SqlConnection Con = new SqlConnection(@"Data Source=DESKTOP-O3H1CKS\SQLCS412_SOFIA;Initial Catalog=FuelStationManagement;Integrated Security=True");
+
+        public SqlConnection Con { get; set; } 
 
         public CustomerForm()
         {
@@ -45,22 +48,24 @@ namespace FuelStationManagementSystem.WUI
                 gridControl.DataSource = ds.Tables[0];
                 Con.Close();
             }
-            catch (Exception) {
+            catch (Exception ex) {
 
-                throw;
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void AddCustomer() {
-            //if (!string.IsNullOrWhiteSpace(ctrlName.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlSurname.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlCardNumber.Text)){
+            //if (!string.IsNullOrWhiteSpace(ctrlName.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlSurname.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlCardNumber.Text)){                    
             string custName = Convert.ToString(ctrlName.Text);
             string custSurname = Convert.ToString(ctrlSurname.Text);
             string custCardNumber = Convert.ToString(ctrlCardNumber.Text);
 
 
+            Customer newCustomer = new Customer(custName, custSurname, custCardNumber);
+
             try {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Customer (ID, Name, Surname, CardNumber) VALUES (NEWID(), '" + custName + "', '" + custSurname + "', '" + custCardNumber + "')", Con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO Customer (ID, Name, Surname, CardNumber) VALUES (NEWID(), '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')", Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Customer Succesfully Added");
                 Con.Close();

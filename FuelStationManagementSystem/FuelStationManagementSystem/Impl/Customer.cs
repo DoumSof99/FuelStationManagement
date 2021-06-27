@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 namespace FuelStationManagementSystem.Impl {
     public class Customer : Person {
 
-        public int CardNumber { get; set; }
+        public string CardNumber { get; set; }
 
-        public Customer() : base() {
-
+        public Customer(string name, string surname, string cardNumber) : base() {
+            Name = name;
+            Surname = surname;
+            CardNumber = cardNumber;
         }
 
     }
