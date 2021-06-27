@@ -37,8 +37,20 @@ namespace FuelStationManagementSystem {
             customerForm.ShowDialog();
         }
 
+
         #endregion
 
+        private void addToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AddEmployee();
+        }
 
+        private void AddEmployee()
+        {
+            EmployeeForm employeeForm = new EmployeeForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            employeeForm.Con = _SqlConnection;
+            employeeForm.ShowDialog();
+        }
     }
 }
