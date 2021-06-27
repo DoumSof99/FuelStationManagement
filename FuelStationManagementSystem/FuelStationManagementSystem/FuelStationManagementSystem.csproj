@@ -59,11 +59,11 @@
   <ItemGroup>
     <Compile Include="Base\Entity.cs" />
     <Compile Include="Base\Person.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="WUI\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="WUI\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Impl\Customer.cs" />
     <Compile Include="Impl\Employee.cs" />
@@ -75,11 +75,11 @@
     <Compile Include="Impl\TransactionLine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WUI\ManageCustomers.cs">
+    <Compile Include="WUI\CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WUI\ManageCustomers.Designer.cs">
-      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    <Compile Include="WUI\CustomerForm.Designer.cs">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -91,8 +91,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="WUI\ManageCustomers.resx">
-      <DependentUpon>ManageCustomers.cs</DependentUpon>
+    <EmbeddedResource Include="WUI\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WUI\CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

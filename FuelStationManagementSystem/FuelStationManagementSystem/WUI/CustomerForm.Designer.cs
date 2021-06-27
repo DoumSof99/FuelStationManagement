@@ -1,7 +1,7 @@
 ﻿
 namespace FuelStationManagementSystem.WUI
 {
-    partial class ManageCustomers
+    partial class CustomerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,26 +33,28 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
+            this.ctrlName = new DevExpress.XtraEditors.TextEdit();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btnAdd = new DevExpress.XtraEditors.SimpleButton();
             this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
             this.ctrlSurname = new DevExpress.XtraEditors.TextEdit();
             this.separatorControl3 = new DevExpress.XtraEditors.SeparatorControl();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.ctrlCardNumber = new DevExpress.XtraEditors.TextEdit();
+            this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlSurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlCardNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
@@ -101,54 +103,55 @@ namespace FuelStationManagementSystem.WUI
             this.panel2.Size = new System.Drawing.Size(903, 15);
             this.panel2.TabIndex = 20;
             // 
-            // textEdit1
+            // ctrlName
             // 
-            this.textEdit1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textEdit1.EditValue = "Name";
-            this.textEdit1.Location = new System.Drawing.Point(48, 162);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.textEdit1.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit1.Properties.Appearance.ForeColor = System.Drawing.Color.Crimson;
-            this.textEdit1.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit1.Properties.Appearance.Options.UseFont = true;
-            this.textEdit1.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit1.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit1.Size = new System.Drawing.Size(189, 26);
-            this.textEdit1.TabIndex = 21;
+            this.ctrlName.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ctrlName.EditValue = "";
+            this.ctrlName.Location = new System.Drawing.Point(49, 183);
+            this.ctrlName.Name = "ctrlName";
+            this.ctrlName.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.ctrlName.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlName.Properties.Appearance.ForeColor = System.Drawing.Color.Crimson;
+            this.ctrlName.Properties.Appearance.Options.UseBackColor = true;
+            this.ctrlName.Properties.Appearance.Options.UseFont = true;
+            this.ctrlName.Properties.Appearance.Options.UseForeColor = true;
+            this.ctrlName.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.ctrlName.Size = new System.Drawing.Size(189, 26);
+            this.ctrlName.TabIndex = 21;
             // 
             // separatorControl1
             // 
             this.separatorControl1.LineColor = System.Drawing.Color.DarkViolet;
             this.separatorControl1.LineThickness = 5;
-            this.separatorControl1.Location = new System.Drawing.Point(48, 191);
+            this.separatorControl1.Location = new System.Drawing.Point(49, 212);
             this.separatorControl1.Margin = new System.Windows.Forms.Padding(0);
             this.separatorControl1.Name = "separatorControl1";
             this.separatorControl1.Padding = new System.Windows.Forms.Padding(0);
             this.separatorControl1.Size = new System.Drawing.Size(189, 5);
             this.separatorControl1.TabIndex = 22;
             // 
-            // simpleButton1
+            // btnAdd
             // 
-            this.simpleButton1.Appearance.BackColor = System.Drawing.Color.Crimson;
-            this.simpleButton1.Appearance.BorderColor = System.Drawing.Color.Crimson;
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton1.Appearance.Options.UseBackColor = true;
-            this.simpleButton1.Appearance.Options.UseBorderColor = true;
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Appearance.Options.UseForeColor = true;
-            this.simpleButton1.Location = new System.Drawing.Point(48, 352);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(88, 33);
-            this.simpleButton1.TabIndex = 23;
-            this.simpleButton1.Text = "Add";
+            this.btnAdd.Appearance.BackColor = System.Drawing.Color.Crimson;
+            this.btnAdd.Appearance.BorderColor = System.Drawing.Color.Crimson;
+            this.btnAdd.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Appearance.Options.UseBackColor = true;
+            this.btnAdd.Appearance.Options.UseBorderColor = true;
+            this.btnAdd.Appearance.Options.UseFont = true;
+            this.btnAdd.Appearance.Options.UseForeColor = true;
+            this.btnAdd.Location = new System.Drawing.Point(47, 418);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(88, 33);
+            this.btnAdd.TabIndex = 23;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // separatorControl2
             // 
             this.separatorControl2.LineColor = System.Drawing.Color.DarkViolet;
             this.separatorControl2.LineThickness = 5;
-            this.separatorControl2.Location = new System.Drawing.Point(48, 237);
+            this.separatorControl2.Location = new System.Drawing.Point(49, 301);
             this.separatorControl2.Margin = new System.Windows.Forms.Padding(0);
             this.separatorControl2.Name = "separatorControl2";
             this.separatorControl2.Padding = new System.Windows.Forms.Padding(0);
@@ -158,8 +161,8 @@ namespace FuelStationManagementSystem.WUI
             // ctrlSurname
             // 
             this.ctrlSurname.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.ctrlSurname.EditValue = "Surname";
-            this.ctrlSurname.Location = new System.Drawing.Point(48, 208);
+            this.ctrlSurname.EditValue = "";
+            this.ctrlSurname.Location = new System.Drawing.Point(49, 272);
             this.ctrlSurname.Name = "ctrlSurname";
             this.ctrlSurname.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.ctrlSurname.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -175,76 +178,61 @@ namespace FuelStationManagementSystem.WUI
             // 
             this.separatorControl3.LineColor = System.Drawing.Color.DarkViolet;
             this.separatorControl3.LineThickness = 5;
-            this.separatorControl3.Location = new System.Drawing.Point(48, 284);
+            this.separatorControl3.Location = new System.Drawing.Point(47, 382);
             this.separatorControl3.Margin = new System.Windows.Forms.Padding(0);
             this.separatorControl3.Name = "separatorControl3";
             this.separatorControl3.Padding = new System.Windows.Forms.Padding(0);
             this.separatorControl3.Size = new System.Drawing.Size(189, 5);
             this.separatorControl3.TabIndex = 27;
             // 
-            // textEdit2
+            // ctrlCardNumber
             // 
-            this.textEdit2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.textEdit2.EditValue = "Card Number";
-            this.textEdit2.Location = new System.Drawing.Point(48, 255);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.textEdit2.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textEdit2.Properties.Appearance.ForeColor = System.Drawing.Color.Crimson;
-            this.textEdit2.Properties.Appearance.Options.UseBackColor = true;
-            this.textEdit2.Properties.Appearance.Options.UseFont = true;
-            this.textEdit2.Properties.Appearance.Options.UseForeColor = true;
-            this.textEdit2.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.textEdit2.Size = new System.Drawing.Size(189, 26);
-            this.textEdit2.TabIndex = 26;
+            this.ctrlCardNumber.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.ctrlCardNumber.EditValue = "";
+            this.ctrlCardNumber.Location = new System.Drawing.Point(47, 353);
+            this.ctrlCardNumber.Name = "ctrlCardNumber";
+            this.ctrlCardNumber.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.ctrlCardNumber.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlCardNumber.Properties.Appearance.ForeColor = System.Drawing.Color.Crimson;
+            this.ctrlCardNumber.Properties.Appearance.Options.UseBackColor = true;
+            this.ctrlCardNumber.Properties.Appearance.Options.UseFont = true;
+            this.ctrlCardNumber.Properties.Appearance.Options.UseForeColor = true;
+            this.ctrlCardNumber.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.ctrlCardNumber.Size = new System.Drawing.Size(189, 26);
+            this.ctrlCardNumber.TabIndex = 26;
             // 
-            // simpleButton2
+            // btnEdit
             // 
-            this.simpleButton2.Appearance.BackColor = System.Drawing.Color.Crimson;
-            this.simpleButton2.Appearance.BorderColor = System.Drawing.Color.Crimson;
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton2.Appearance.Options.UseBackColor = true;
-            this.simpleButton2.Appearance.Options.UseBorderColor = true;
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Appearance.Options.UseForeColor = true;
-            this.simpleButton2.Location = new System.Drawing.Point(142, 352);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(88, 33);
-            this.simpleButton2.TabIndex = 28;
-            this.simpleButton2.Text = "Edit";
+            this.btnEdit.Appearance.BackColor = System.Drawing.Color.Crimson;
+            this.btnEdit.Appearance.BorderColor = System.Drawing.Color.Crimson;
+            this.btnEdit.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.Appearance.Options.UseBackColor = true;
+            this.btnEdit.Appearance.Options.UseBorderColor = true;
+            this.btnEdit.Appearance.Options.UseFont = true;
+            this.btnEdit.Appearance.Options.UseForeColor = true;
+            this.btnEdit.Location = new System.Drawing.Point(141, 418);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(88, 33);
+            this.btnEdit.TabIndex = 28;
+            this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // simpleButton3
+            // btnDelete
             // 
-            this.simpleButton3.Appearance.BackColor = System.Drawing.Color.Crimson;
-            this.simpleButton3.Appearance.BorderColor = System.Drawing.Color.Crimson;
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton3.Appearance.Options.UseBackColor = true;
-            this.simpleButton3.Appearance.Options.UseBorderColor = true;
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Appearance.Options.UseForeColor = true;
-            this.simpleButton3.Location = new System.Drawing.Point(236, 352);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(88, 33);
-            this.simpleButton3.TabIndex = 29;
-            this.simpleButton3.Text = "Delete";
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Appearance.BackColor = System.Drawing.Color.Crimson;
-            this.simpleButton4.Appearance.BorderColor = System.Drawing.Color.Crimson;
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.ForeColor = System.Drawing.Color.White;
-            this.simpleButton4.Appearance.Options.UseBackColor = true;
-            this.simpleButton4.Appearance.Options.UseBorderColor = true;
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Appearance.Options.UseForeColor = true;
-            this.simpleButton4.Location = new System.Drawing.Point(142, 410);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(88, 33);
-            this.simpleButton4.TabIndex = 30;
-            this.simpleButton4.Text = "Home";
+            this.btnDelete.Appearance.BackColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Appearance.BorderColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Appearance.Options.UseBackColor = true;
+            this.btnDelete.Appearance.Options.UseBorderColor = true;
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Appearance.Options.UseForeColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(235, 418);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(88, 33);
+            this.btnDelete.TabIndex = 29;
+            this.btnDelete.Text = "Delete";
             // 
             // gridControl1
             // 
@@ -273,35 +261,74 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl3.TabIndex = 32;
             this.labelControl3.Text = "CUSTOMERS LIST";
             // 
-            // ManageCustomers
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Appearance.Options.UseForeColor = true;
+            this.labelControl4.Location = new System.Drawing.Point(49, 156);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(52, 21);
+            this.labelControl4.TabIndex = 33;
+            this.labelControl4.Text = "Name:";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Appearance.Options.UseForeColor = true;
+            this.labelControl5.Location = new System.Drawing.Point(49, 245);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(73, 21);
+            this.labelControl5.TabIndex = 34;
+            this.labelControl5.Text = "Surname:";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Appearance.Options.UseForeColor = true;
+            this.labelControl6.Location = new System.Drawing.Point(47, 326);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(111, 21);
+            this.labelControl6.TabIndex = 35;
+            this.labelControl6.Text = "Card Number:";
+            // 
+            // CustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 668);
+            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.labelControl5);
+            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.gridControl1);
-            this.Controls.Add(this.simpleButton4);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.separatorControl3);
-            this.Controls.Add(this.textEdit2);
+            this.Controls.Add(this.ctrlCardNumber);
             this.Controls.Add(this.separatorControl2);
             this.Controls.Add(this.ctrlSurname);
-            this.Controls.Add(this.simpleButton1);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.separatorControl1);
-            this.Controls.Add(this.textEdit1);
+            this.Controls.Add(this.ctrlName);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "ManageCustomers";
+            this.Name = "CustomerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ManageCustomers";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlSurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ctrlCardNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
@@ -312,20 +339,22 @@ namespace FuelStationManagementSystem.WUI
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
+        private DevExpress.XtraEditors.TextEdit ctrlName;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btnAdd;
         private DevExpress.XtraEditors.SeparatorControl separatorControl2;
         private DevExpress.XtraEditors.TextEdit ctrlSurname;
         private DevExpress.XtraEditors.SeparatorControl separatorControl3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.TextEdit ctrlCardNumber;
+        private DevExpress.XtraEditors.SimpleButton btnEdit;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
     }
 }
