@@ -143,6 +143,7 @@ namespace FuelStationManagementSystem.WUI {
             this.btnEdit.Size = new System.Drawing.Size(88, 33);
             this.btnEdit.TabIndex = 45;
             this.btnEdit.Text = "Edit";
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // separatorControl3
             // 
@@ -383,6 +384,7 @@ namespace FuelStationManagementSystem.WUI {
             this.colCost});
             this.gridViewItems.GridControl = this.gridItems;
             this.gridViewItems.Name = "gridViewItems";
+            this.gridViewItems.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewItems_FocusedRowChanged);
             // 
             // colID
             // 

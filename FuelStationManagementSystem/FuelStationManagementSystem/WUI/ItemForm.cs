@@ -29,10 +29,12 @@ namespace FuelStationManagementSystem.WUI {
         private void btnAdd_Click(object sender, EventArgs e) {
             AddItem();
         }
-
+        private void btnEdit_Click(object sender, EventArgs e) {
+            EditItem();
+        }
         private void Populate() {
             Con.Open();
-            string MyQuery = "SELECT Code, Description, ItemType, Price, Cost FROM Items";
+            string MyQuery = "SELECT ID, Code, Description, ItemType, Price, Cost FROM Items";
             SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
             var ds = new DataSet();
@@ -71,6 +73,29 @@ namespace FuelStationManagementSystem.WUI {
                 MessageBox.Show("Please enter all values");
             }
         }
-      
+
+        private void EditItem() {
+            try {
+                Guid id = Guid.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("ID")));
+                Con.Open();
+                SqlCommand cmd = new SqlCommand("UPDATE Items SET Code ='" + ctrlCode.Text + "', Description='" + ctrlDescription.Text + "', ItemType ='" + ctrlItemType.SelectedItem.ToString() + "', Price = '" + ctrlPrice.Text + "', Cost = '" + ctrlCost.Text + "' WHERE ID ='" + id + "'", Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Customer Successfully Updated");
+                Con.Close();
+                Populate();
+                ResetFields();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void gridViewItems_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            ctrlCode.Text = Convert.ToString(gridViewItems.GetFocusedRowCellValue("Code"));
+            ctrlDescription.Text = Convert.ToString(gridViewItems.GetFocusedRowCellValue("Description"));
+            ctrlItemType.Text = Convert.ToString(gridViewItems.GetFocusedRowCellValue("ItemType"));
+            ctrlPrice.Text = Convert.ToString(gridViewItems.GetFocusedRowCellValue("Price"));
+            ctrlCost.Text = Convert.ToString(gridViewItems.GetFocusedRowCellValue("Cost"));
+        }
     }
 }
