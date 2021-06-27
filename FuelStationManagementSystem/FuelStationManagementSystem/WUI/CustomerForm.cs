@@ -27,7 +27,7 @@ namespace FuelStationManagementSystem.WUI
 
         private void btnAdd_Click(object sender, EventArgs e) {
             AddCustomer();
-
+            Populate();
         }
 
         private void btnEdit_Click(object sender, EventArgs e) {
