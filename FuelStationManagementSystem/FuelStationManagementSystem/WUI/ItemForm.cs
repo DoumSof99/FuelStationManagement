@@ -32,6 +32,11 @@ namespace FuelStationManagementSystem.WUI {
         private void btnEdit_Click(object sender, EventArgs e) {
             EditItem();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e) {
+            DeleteItem();
+        }
+
         private void Populate() {
             Con.Open();
             string MyQuery = "SELECT ID, Code, Description, ItemType, Price, Cost FROM Items";
@@ -97,5 +102,24 @@ namespace FuelStationManagementSystem.WUI {
             ctrlPrice.Text = Convert.ToString(gridViewItems.GetFocusedRowCellValue("Price"));
             ctrlCost.Text = Convert.ToString(gridViewItems.GetFocusedRowCellValue("Cost"));
         }
+
+        private void DeleteItem() {
+            if (ctrlCode.Text == String.Empty) {
+                MessageBox.Show("Select a field");
+            }
+            else {
+                Guid id = Guid.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("ID")));
+
+                Con.Open();
+                string myquery = "DELETE FROM Items WHERE ID='" + id + "'";
+                SqlCommand cmd = new SqlCommand(myquery, Con);
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Item Successfully Deleted");
+                Con.Close();
+                Populate();
+                ResetFields();
+            }
+        }
+        
     }
 }

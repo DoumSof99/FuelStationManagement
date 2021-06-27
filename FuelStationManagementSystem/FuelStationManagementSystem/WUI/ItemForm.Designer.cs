@@ -127,6 +127,7 @@ namespace FuelStationManagementSystem.WUI {
             this.btnDelete.Size = new System.Drawing.Size(88, 33);
             this.btnDelete.TabIndex = 46;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
