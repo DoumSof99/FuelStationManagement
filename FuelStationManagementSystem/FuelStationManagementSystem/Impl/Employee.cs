@@ -10,12 +10,22 @@ namespace FuelStationManagementSystem.Impl
     public class Employee : Person
     {
         public DateTime DateStart { get; set; }
-        public DateTime DateEnd { get; set; }
+        public DateTime? DateEnd { get; set; }
         public decimal Salary { get; set; }
 
-        public Employee() :  base()
+        public Employee(string name, string surname, decimal salary) :  base()
         {
-            DateStart = DateTime.Now;    
+            Name = name;
+            Surname = surname;
+            Salary = salary;
+            DateStart = DateTime.Now;
+            DateEnd = null;
+        }
+
+        public string GetStartDate()
+        {
+            string startDate = DateStart.ToString("yyyy-MM-dd");
+            return startDate;
         }
     }
 }
