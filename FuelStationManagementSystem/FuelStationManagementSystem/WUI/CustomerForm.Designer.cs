@@ -43,10 +43,10 @@ namespace FuelStationManagementSystem.WUI
             this.ctrlCardNumber = new DevExpress.XtraEditors.TextEdit();
             this.btnEdit = new DevExpress.XtraEditors.SimpleButton();
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl = new DevExpress.XtraGrid.GridControl();
+            this.gridCustomers = new DevExpress.XtraGrid.GridControl();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.fuelStationManagementDataSet2 = new FuelStationManagementSystem.FuelStationManagementDataSet2();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewCustomers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -63,10 +63,10 @@ namespace FuelStationManagementSystem.WUI
             ((System.ComponentModel.ISupportInitialize)(this.ctrlSurname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCardNumber.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fuelStationManagementDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomers)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -243,20 +243,21 @@ namespace FuelStationManagementSystem.WUI
             this.btnDelete.Size = new System.Drawing.Size(88, 33);
             this.btnDelete.TabIndex = 29;
             this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // gridControl
+            // gridCustomers
             // 
-            this.gridControl.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.gridCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gridControl.DataSource = this.customerBindingSource;
-            this.gridControl.Location = new System.Drawing.Point(379, 180);
-            this.gridControl.MainView = this.gridView1;
-            this.gridControl.Name = "gridControl";
-            this.gridControl.Size = new System.Drawing.Size(499, 452);
-            this.gridControl.TabIndex = 31;
-            this.gridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridCustomers.DataSource = this.customerBindingSource;
+            this.gridCustomers.Location = new System.Drawing.Point(379, 180);
+            this.gridCustomers.MainView = this.gridViewCustomers;
+            this.gridCustomers.Name = "gridCustomers";
+            this.gridCustomers.Size = new System.Drawing.Size(499, 452);
+            this.gridCustomers.TabIndex = 31;
+            this.gridCustomers.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridViewCustomers});
             // 
             // customerBindingSource
             // 
@@ -268,15 +269,17 @@ namespace FuelStationManagementSystem.WUI
             this.fuelStationManagementDataSet2.DataSetName = "FuelStationManagementDataSet2";
             this.fuelStationManagementDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // gridView1
+            // gridViewCustomers
             // 
-            this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gridViewCustomers.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colID,
             this.colName,
             this.colSurname,
             this.colCardNumber});
-            this.gridView1.GridControl = this.gridControl;
-            this.gridView1.Name = "gridView1";
+            this.gridViewCustomers.GridControl = this.gridCustomers;
+            this.gridViewCustomers.Name = "gridViewCustomers";
+            this.gridViewCustomers.OptionsView.ShowGroupPanel = false;
+            this.gridViewCustomers.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewCustomers_FocusedRowChanged);
             // 
             // colID
             // 
@@ -365,7 +368,7 @@ namespace FuelStationManagementSystem.WUI
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.labelControl3);
-            this.Controls.Add(this.gridControl);
+            this.Controls.Add(this.gridCustomers);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.separatorControl3);
@@ -389,10 +392,10 @@ namespace FuelStationManagementSystem.WUI
             ((System.ComponentModel.ISupportInitialize)(this.ctrlSurname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCardNumber.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fuelStationManagementDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -412,8 +415,8 @@ namespace FuelStationManagementSystem.WUI
         private DevExpress.XtraEditors.TextEdit ctrlCardNumber;
         private DevExpress.XtraEditors.SimpleButton btnEdit;
         private DevExpress.XtraEditors.SimpleButton btnDelete;
-        private DevExpress.XtraGrid.GridControl gridControl;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridCustomers;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewCustomers;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
