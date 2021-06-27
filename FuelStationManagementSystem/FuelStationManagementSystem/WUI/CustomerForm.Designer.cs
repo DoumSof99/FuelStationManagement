@@ -45,8 +45,7 @@ namespace FuelStationManagementSystem.WUI
             this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.gridCustomers = new DevExpress.XtraGrid.GridControl();
             this.customerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fuelStationManagementDataSet2 = new FuelStationManagementSystem.FuelStationManagementDataSet2();
-            this.gridViewCustomers = new DevExpress.XtraGrid.Views.Grid.GridView();
+             this.gridViewCustomers = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colName = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSurname = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -55,7 +54,6 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
-            this.customerTableAdapter = new FuelStationManagementSystem.FuelStationManagementDataSet2TableAdapters.CustomerTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -65,7 +63,6 @@ namespace FuelStationManagementSystem.WUI
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCardNumber.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fuelStationManagementDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -262,12 +259,9 @@ namespace FuelStationManagementSystem.WUI
             // customerBindingSource
             // 
             this.customerBindingSource.DataMember = "Customer";
-            this.customerBindingSource.DataSource = this.fuelStationManagementDataSet2;
             // 
             // fuelStationManagementDataSet2
             // 
-            this.fuelStationManagementDataSet2.DataSetName = "FuelStationManagementDataSet2";
-            this.fuelStationManagementDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // gridViewCustomers
             // 
@@ -357,7 +351,6 @@ namespace FuelStationManagementSystem.WUI
             // 
             // customerTableAdapter
             // 
-            this.customerTableAdapter.ClearBeforeFill = true;
             // 
             // CustomerForm
             // 
@@ -394,7 +387,6 @@ namespace FuelStationManagementSystem.WUI
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCardNumber.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridCustomers)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.customerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fuelStationManagementDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -425,8 +417,6 @@ namespace FuelStationManagementSystem.WUI
         private DevExpress.XtraGrid.Columns.GridColumn colName;
         private DevExpress.XtraGrid.Columns.GridColumn colSurname;
         private DevExpress.XtraGrid.Columns.GridColumn colCardNumber;
-        private FuelStationManagementDataSet2 fuelStationManagementDataSet2;
         private System.Windows.Forms.BindingSource customerBindingSource;
-        private FuelStationManagementDataSet2TableAdapters.CustomerTableAdapter customerTableAdapter;
     }
 }
