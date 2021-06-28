@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraGrid;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -139,6 +140,10 @@ namespace FuelStationManagementSystem.WUI
 
             table.Rows.Add(itemID, itemQuantity, itemPrice, value, itemCost, cost);
             gridTransactionLines.DataSource = table;
+
+            GridSummaryItem totalValue = gridViewTransactionLines.Columns["Value"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "Value", "Sum = {0:N2}");
+
+            ctrlTotalValue.Text = Convert.ToString(totalValue);
 
         }
     }
