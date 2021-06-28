@@ -130,7 +130,14 @@ namespace FuelStationManagementSystem.WUI
             Columns = { { "ItemID" }, { "Quantity" }, { "ItemPrice" }, { "Value" }, { "ItemCost" }, { "Cost" } }
         };
 
+        bool fuelAdded = false;
         private void AddItems() {
+            string itemType = Convert.ToString(gridViewItems.GetFocusedRowCellValue("ItemType"));
+            if (itemType == "Fuel")
+            {
+                fuelAdded = true;
+            }
+
             Guid itemID = Guid.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("ID")));
             int itemQuantity = Convert.ToInt32(ctrlQuantity.Text);
             decimal itemPrice = decimal.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("Price")));
@@ -142,9 +149,10 @@ namespace FuelStationManagementSystem.WUI
             gridTransactionLines.DataSource = table;
 
             GridSummaryItem totalValue = gridViewTransactionLines.Columns["Value"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "Value", "Sum = {0:N2}");
+            ctrlTotalValue.Text = Convert.ToString(totalValue.SummaryValue);
 
-            ctrlTotalValue.Text = Convert.ToString(totalValue);
-
+            GridSummaryItem totalCost = gridViewTransactionLines.Columns["Cost"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "Cost", "Sum = {0:N2}");
+            ctrlTotalCost.Text = Convert.ToString(totalCost.SummaryValue);
         }
     }
 }
