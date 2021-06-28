@@ -61,5 +61,13 @@ namespace FuelStationManagementSystem {
             employeeForm.Con = _SqlConnection;
             employeeForm.ShowDialog();
         }
+
+        private void addToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            TransactionForm transactionForm = new TransactionForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            transactionForm.Con = _SqlConnection;
+            transactionForm.ShowDialog();
+        }
     }
 }
