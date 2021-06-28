@@ -96,7 +96,9 @@ namespace FuelStationManagementSystem.WUI
             // 
             // gridCustomers
             // 
-            this.gridCustomers.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gridCustomers.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridCustomers.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridCustomers.Location = new System.Drawing.Point(13, 171);
             this.gridCustomers.MainView = this.gridViewCustomers;
@@ -203,7 +205,9 @@ namespace FuelStationManagementSystem.WUI
             // 
             // gridItems
             // 
-            this.gridItems.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gridItems.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridItems.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridItems.Location = new System.Drawing.Point(13, 488);
             this.gridItems.MainView = this.gridViewItems;
@@ -325,7 +329,9 @@ namespace FuelStationManagementSystem.WUI
             // 
             // gridTransactionLines
             // 
-            this.gridTransactionLines.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gridTransactionLines.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridTransactionLines.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
             this.gridTransactionLines.Location = new System.Drawing.Point(598, 171);
             this.gridTransactionLines.MainView = this.gridViewTransactionLines;

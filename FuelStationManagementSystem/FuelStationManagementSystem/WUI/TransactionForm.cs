@@ -130,29 +130,42 @@ namespace FuelStationManagementSystem.WUI
             Columns = { { "ItemID" }, { "Quantity" }, { "ItemPrice" }, { "Value" }, { "ItemCost" }, { "Cost" } }
         };
 
-        bool fuelAdded = false;
+     //   bool fuelAdded = false;
+        int fuelCount = 0;
         private void AddItems() {
+          
             string itemType = Convert.ToString(gridViewItems.GetFocusedRowCellValue("ItemType"));
-            if (itemType == "Fuel")
-            {
-                fuelAdded = true;
-            }
-
+           
             Guid itemID = Guid.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("ID")));
             int itemQuantity = Convert.ToInt32(ctrlQuantity.Text);
             decimal itemPrice = decimal.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("Price")));
             decimal itemCost = decimal.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("Cost")));
             decimal value = itemQuantity * itemPrice;
             decimal cost = itemQuantity * itemCost;
+            
+            if (itemType == "Fuel") {
+             //   fuelAdded = true;
+                fuelCount += 1;
+                itemQuantity = 1;
+            }
 
-            table.Rows.Add(itemID, itemQuantity, itemPrice, value, itemCost, cost);
-            gridTransactionLines.DataSource = table;
+            if (fuelCount > 1) {
+                MessageBox.Show("You have already chosen Fuel!");
+            }
+            else {
+                table.Rows.Add(itemID, itemQuantity, itemPrice, value, itemCost, cost);
+                gridTransactionLines.DataSource = table;
 
-            GridSummaryItem totalValue = gridViewTransactionLines.Columns["Value"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "Value", "Sum = {0:N2}");
-            ctrlTotalValue.Text = Convert.ToString(totalValue.SummaryValue);
+                GridSummaryItem totalValue = gridViewTransactionLines.Columns["Value"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "Value", "Sum = {0:N2}");
+                ctrlTotalValue.Text = Convert.ToString(totalValue.SummaryValue);
 
-            GridSummaryItem totalCost = gridViewTransactionLines.Columns["Cost"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "Cost", "Sum = {0:N2}");
-            ctrlTotalCost.Text = Convert.ToString(totalCost.SummaryValue);
+                GridSummaryItem totalCost = gridViewTransactionLines.Columns["Cost"].Summary.Add(DevExpress.Data.SummaryItemType.Sum, "Cost", "Sum = {0:N2}");
+                ctrlTotalCost.Text = Convert.ToString(totalCost.SummaryValue);
+
+            }
+
+            
+
         }
     }
 }
