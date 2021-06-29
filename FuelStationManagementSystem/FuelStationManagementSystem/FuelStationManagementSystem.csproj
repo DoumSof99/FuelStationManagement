@@ -69,6 +69,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="WUI\ChooseCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WUI\ChooseCustomerForm.Designer.cs">
+      <DependentUpon>ChooseCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="WUI\ItemForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="WUI\ChooseCustomerForm.resx">
+      <DependentUpon>ChooseCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WUI\ItemForm.resx">
       <DependentUpon>ItemForm.cs</DependentUpon>
     </EmbeddedResource>

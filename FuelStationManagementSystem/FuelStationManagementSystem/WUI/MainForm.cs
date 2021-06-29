@@ -64,10 +64,10 @@ namespace FuelStationManagementSystem {
 
         private void addToolStripMenuItem3_Click(object sender, EventArgs e)
         {
-            TransactionForm transactionForm = new TransactionForm();
+            ChooseCustomerForm chooseCustomerForm = new ChooseCustomerForm();
             _SqlConnection = new SqlConnection(ConnectionString);
-            transactionForm.Con = _SqlConnection;
-            transactionForm.ShowDialog();
+            chooseCustomerForm.Con = _SqlConnection;
+            chooseCustomerForm.ShowDialog();
         }
     }
 }

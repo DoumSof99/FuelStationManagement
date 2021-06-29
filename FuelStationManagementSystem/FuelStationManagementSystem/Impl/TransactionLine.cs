@@ -13,9 +13,19 @@ namespace FuelStationManagementSystem.Impl {
         public int Quantity { get; set; }
         public decimal ItemPrice { get; set; }
         public decimal Value { get; set; }
+        public decimal ItemCost { get; set; }
+        public decimal Cost { get; set; }
 
-        public TransactionLine() : base() {
+        public string ItemType { get; set; }
 
+        public TransactionLine(Guid itemID, int quantity, decimal itemPrice, decimal value, decimal itemCost, decimal cost, string itemType ) : base() {
+            ItemID = itemID;
+            Quantity = quantity;
+            ItemPrice = itemPrice;
+            ItemCost = itemCost;
+            Value = value;
+            Cost = cost;
+            ItemType = itemType;
         }
 
     }

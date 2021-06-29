@@ -13,11 +13,24 @@ namespace FuelStationManagementSystem.Impl
         public Guid CustomerID { get; set; }
         public decimal DiscountValue { get; set; }
         public decimal TotalValue { get; set; }
+        public decimal TotalCost { get; set; }
+
         public List<TransactionLine> TransactionLines { get; set; }
 
-        public Transaction() : base()
+        public Transaction(Guid customerId, decimal discountValue, decimal totalValue, decimal totalCost) 
+            : base()
         {
             Date = DateTime.Now;
+            CustomerID = customerId;
+            DiscountValue = discountValue;
+            TotalValue = totalValue;
+            TotalCost = totalCost;    
+        }
+
+        public string GetDate()
+        {
+            string date = Date.ToString("yyyy-MM-dd");
+            return date;
         }
     }
 }
