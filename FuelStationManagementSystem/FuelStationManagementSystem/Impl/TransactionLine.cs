@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace FuelStationManagementSystem.Impl {
     public class TransactionLine : Entity {
 
-        public Guid TransactionID { get; set; }
+        public string TransactionID { get; set; }
         public Guid ItemID { get; set; }
         public int Quantity { get; set; }
         public decimal ItemPrice { get; set; }

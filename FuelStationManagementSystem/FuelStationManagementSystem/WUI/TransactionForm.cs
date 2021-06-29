@@ -181,16 +181,14 @@ namespace FuelStationManagementSystem.WUI
                 Convert.ToDecimal(ctrlTotalCost.Text)
             );
 
-            try
-            {
+            try {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Transaction (ID, Date, CustomerID, DiscountValue, TotalValue, TotalCost) VALUES (NEWID(), '" + newTransaction.GetDate() + "', '" + newTransaction.CustomerID + "','" + newTransaction.DiscountValue + "', '" + newTransaction.TotalValue + "', '" + newTransaction.TotalCost + "')", Con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [Transaction](ID, Date, CustomerID, DiscountValue, TotalValue, TotalCost) VALUES(NEWID(), '" + newTransaction.GetDate() + "', '" + newTransaction.CustomerID + "','" + newTransaction.DiscountValue + "', '" + newTransaction.TotalValue + "', '" + newTransaction.TotalCost + "')", Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Transaction Succesfully Added");
                 Con.Close();
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 MessageBox.Show(ex.Message);
                 Con.Close();
             }
@@ -198,25 +196,21 @@ namespace FuelStationManagementSystem.WUI
             AddTransactionLines(newTransaction);
         }
 
-        private void AddTransactionLines(Transaction newTransaction)
-        {
-            foreach (var item in _TransactionLines)
-            {
-                item.ID = newTransaction.ID;
-                try
-                {
+        private void AddTransactionLines(Transaction newTransaction) {
+            foreach (var item in _TransactionLines) {
+                item.TransactionID = Convert.ToString(newTransaction.ID);
+                try {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO TransactionLine (ID, TransactionID, ItemID, Quantity, ItemPrice, Value, ItemCost, Cost, ItemType) VALUES ('" + item.ID + "', '" + item.TransactionID + "', '" + item.ItemID + "', '" + item.Quantity + "', '" + item.ItemPrice + "', '" + item.Value + "', '" + item.ItemCost + "', '" + item.Cost + "', '" + item.ItemType + "')", Con);
+                    SqlCommand cmd = new SqlCommand("INSERT INTO TransactionLine (ID, TransactionID, ItemID, Quantity, ItemPrice, Value, ItemCost, Cost, ItemType) VALUES ('" + item.ID + "', '" + Convert.ToString(item.TransactionID) + "', '" + Convert.ToString(item.ItemID) + "', '" + item.Quantity + "', '" + item.ItemPrice + "', '" + item.Value + "', '" + item.ItemCost + "', '" + item.Cost + "', '" + item.ItemType + "')", Con);
                     cmd.ExecuteNonQuery();
                     Con.Close();
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex) {
                     MessageBox.Show(ex.Message);
                     Con.Close();
                 }
             }
         }
-        
+
     }
 }
