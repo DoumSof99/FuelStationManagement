@@ -79,6 +79,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FuelStationManagementDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FuelStationManagementDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="WUI\ChooseCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -96,6 +101,12 @@
     </Compile>
     <Compile Include="WUI\EmployeeForm.Designer.cs">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WUI\LedgerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WUI\LedgerForm.Designer.cs">
+      <DependentUpon>LedgerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="WUI\MainForm.cs">
       <SubType>Form</SubType>
@@ -156,6 +167,9 @@
     <EmbeddedResource Include="WUI\EmployeeForm.resx">
       <DependentUpon>EmployeeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WUI\LedgerForm.resx">
+      <DependentUpon>LedgerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WUI\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -214,6 +228,17 @@
     </None>
     <None Include="FuelStationManagementDataSet3.xss">
       <DependentUpon>FuelStationManagementDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet4.xsc">
+      <DependentUpon>FuelStationManagementDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="FuelStationManagementDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>FuelStationManagementDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="FuelStationManagementDataSet4.xss">
+      <DependentUpon>FuelStationManagementDataSet4.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

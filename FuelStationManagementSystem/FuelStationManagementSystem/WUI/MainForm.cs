@@ -76,5 +76,12 @@ namespace FuelStationManagementSystem {
             viewTransaction.Con = _SqlConnection;
             viewTransaction.ShowDialog();
         }
+
+        private void viewToolStripMenuItem4_Click(object sender, EventArgs e) {
+            LedgerForm ledgerForm = new LedgerForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            ledgerForm.Con = _SqlConnection;
+            ledgerForm.ShowDialog();
+        }
     }
 }

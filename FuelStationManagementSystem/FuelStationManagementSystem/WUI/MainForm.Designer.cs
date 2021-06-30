@@ -74,7 +74,7 @@ namespace FuelStationManagementSystem {
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // customerToolStripMenuItem
@@ -89,14 +89,14 @@ namespace FuelStationManagementSystem {
             // addToolStripMenuItem
             // 
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.addToolStripMenuItem.Text = "Add/View";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(123, 6);
             // 
             // employeeToolStripMenuItem
             // 
@@ -110,14 +110,14 @@ namespace FuelStationManagementSystem {
             // addToolStripMenuItem1
             // 
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
             this.addToolStripMenuItem1.Text = "Add/View";
             this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(96, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(123, 6);
             // 
             // itemsToolStripMenuItem
             // 
@@ -131,14 +131,14 @@ namespace FuelStationManagementSystem {
             // addToolStripMenuItem2
             // 
             this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
-            this.addToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(126, 22);
             this.addToolStripMenuItem2.Text = "Add/View";
             this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(96, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(123, 6);
             // 
             // transactionToolStripMenuItem
             // 
@@ -165,7 +165,7 @@ namespace FuelStationManagementSystem {
             // viewToolStripMenuItem3
             // 
             this.viewToolStripMenuItem3.Name = "viewToolStripMenuItem3";
-            this.viewToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.viewToolStripMenuItem3.Size = new System.Drawing.Size(99, 22);
             this.viewToolStripMenuItem3.Text = "View";
             this.viewToolStripMenuItem3.Click += new System.EventHandler(this.viewToolStripMenuItem3_Click);
             // 
@@ -180,8 +180,9 @@ namespace FuelStationManagementSystem {
             // viewToolStripMenuItem4
             // 
             this.viewToolStripMenuItem4.Name = "viewToolStripMenuItem4";
-            this.viewToolStripMenuItem4.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.viewToolStripMenuItem4.Text = "View";
+            this.viewToolStripMenuItem4.Click += new System.EventHandler(this.viewToolStripMenuItem4_Click);
             // 
             // ctrlConnection
             // 
