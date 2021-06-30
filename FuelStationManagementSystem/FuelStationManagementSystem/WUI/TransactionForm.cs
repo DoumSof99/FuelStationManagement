@@ -212,5 +212,11 @@ namespace FuelStationManagementSystem.WUI
             }
         }
 
+        private void btnViewTransaction_Click(object sender, EventArgs e) {
+            ViewTransactionForm viewTransaction = new ViewTransactionForm();
+            viewTransaction.Con = Con;
+            viewTransaction.ShowDialog();
+        }
+
     }
 }

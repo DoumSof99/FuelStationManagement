@@ -69,5 +69,12 @@ namespace FuelStationManagementSystem {
             chooseCustomerForm.Con = _SqlConnection;
             chooseCustomerForm.ShowDialog();
         }
+
+        private void viewToolStripMenuItem3_Click(object sender, EventArgs e) {
+            ViewTransactionForm viewTransaction = new ViewTransactionForm();
+            _SqlConnection = new SqlConnection(ConnectionString);
+            viewTransaction.Con = _SqlConnection;
+            viewTransaction.ShowDialog();
+        }
     }
 }

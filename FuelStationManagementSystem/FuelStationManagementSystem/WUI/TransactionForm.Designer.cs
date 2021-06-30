@@ -66,7 +66,7 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl4 = new DevExpress.XtraEditors.SeparatorControl();
             this.ctrlTotalCost = new DevExpress.XtraEditors.TextEdit();
-            this.btnDeleteTransaction = new DevExpress.XtraEditors.SimpleButton();
+            this.btnViewTransaction = new DevExpress.XtraEditors.SimpleButton();
             this.btnAddTransaction = new DevExpress.XtraEditors.SimpleButton();
             this.btnRefresh = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
@@ -527,24 +527,25 @@ namespace FuelStationManagementSystem.WUI
             this.ctrlTotalCost.Size = new System.Drawing.Size(189, 26);
             this.ctrlTotalCost.TabIndex = 76;
             // 
-            // btnDeleteTransaction
+            // btnViewTransaction
             // 
-            this.btnDeleteTransaction.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnDeleteTransaction.Appearance.BackColor = System.Drawing.Color.Crimson;
-            this.btnDeleteTransaction.Appearance.BorderColor = System.Drawing.Color.Crimson;
-            this.btnDeleteTransaction.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteTransaction.Appearance.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteTransaction.Appearance.Options.UseBackColor = true;
-            this.btnDeleteTransaction.Appearance.Options.UseBorderColor = true;
-            this.btnDeleteTransaction.Appearance.Options.UseFont = true;
-            this.btnDeleteTransaction.Appearance.Options.UseForeColor = true;
-            this.btnDeleteTransaction.Appearance.Options.UseTextOptions = true;
-            this.btnDeleteTransaction.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
-            this.btnDeleteTransaction.Location = new System.Drawing.Point(1112, 149);
-            this.btnDeleteTransaction.Name = "btnDeleteTransaction";
-            this.btnDeleteTransaction.Size = new System.Drawing.Size(115, 69);
-            this.btnDeleteTransaction.TabIndex = 80;
-            this.btnDeleteTransaction.Text = "View Tansactions";
+            this.btnViewTransaction.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnViewTransaction.Appearance.BackColor = System.Drawing.Color.Crimson;
+            this.btnViewTransaction.Appearance.BorderColor = System.Drawing.Color.Crimson;
+            this.btnViewTransaction.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewTransaction.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnViewTransaction.Appearance.Options.UseBackColor = true;
+            this.btnViewTransaction.Appearance.Options.UseBorderColor = true;
+            this.btnViewTransaction.Appearance.Options.UseFont = true;
+            this.btnViewTransaction.Appearance.Options.UseForeColor = true;
+            this.btnViewTransaction.Appearance.Options.UseTextOptions = true;
+            this.btnViewTransaction.Appearance.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap;
+            this.btnViewTransaction.Location = new System.Drawing.Point(1112, 149);
+            this.btnViewTransaction.Name = "btnViewTransaction";
+            this.btnViewTransaction.Size = new System.Drawing.Size(115, 69);
+            this.btnViewTransaction.TabIndex = 80;
+            this.btnViewTransaction.Text = "View Tansactions";
+            this.btnViewTransaction.Click += new System.EventHandler(this.btnViewTransaction_Click);
             // 
             // btnAddTransaction
             // 
@@ -666,7 +667,7 @@ namespace FuelStationManagementSystem.WUI
             this.Controls.Add(this.labelControl10);
             this.Controls.Add(this.labelControl9);
             this.Controls.Add(this.btnRefresh);
-            this.Controls.Add(this.btnDeleteTransaction);
+            this.Controls.Add(this.btnViewTransaction);
             this.Controls.Add(this.btnAddTransaction);
             this.Controls.Add(this.labelControl8);
             this.Controls.Add(this.separatorControl4);
@@ -741,7 +742,7 @@ namespace FuelStationManagementSystem.WUI
         private DevExpress.XtraEditors.LabelControl labelControl8;
         private DevExpress.XtraEditors.SeparatorControl separatorControl4;
         private DevExpress.XtraEditors.TextEdit ctrlTotalCost;
-        private DevExpress.XtraEditors.SimpleButton btnDeleteTransaction;
+        private DevExpress.XtraEditors.SimpleButton btnViewTransaction;
         private DevExpress.XtraEditors.SimpleButton btnAddTransaction;
         private DevExpress.XtraEditors.SimpleButton btnRefresh;
         private DevExpress.XtraEditors.LabelControl labelControl9;
