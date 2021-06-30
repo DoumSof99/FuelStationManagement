@@ -102,7 +102,7 @@ namespace FuelStationManagementSystem.WUI
 
         private void AddItems() {                            
             Guid itemID = Guid.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("ID")));
-            
+
             int itemQuantity = Convert.ToInt32(ctrlQuantity.Text);
 
             string itemType = Convert.ToString(gridViewItems.GetFocusedRowCellValue("ItemType"));
@@ -183,7 +183,7 @@ namespace FuelStationManagementSystem.WUI
 
             try {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [Transaction](ID, Date, CustomerID, DiscountValue, TotalValue, TotalCost) VALUES(NEWID(), '" + newTransaction.GetDate() + "', '" + newTransaction.CustomerID + "','" + newTransaction.DiscountValue + "', '" + newTransaction.TotalValue + "', '" + newTransaction.TotalCost + "')", Con);
+                SqlCommand cmd = new SqlCommand("INSERT INTO [Transaction](ID, Date, CustomerID, DiscountValue, TotalValue, TotalCost) VALUES('" + newTransaction.ID + "', '" + newTransaction.GetDate() + "', '" + newTransaction.CustomerID + "','" + newTransaction.DiscountValue + "', '" + newTransaction.TotalValue + "', '" + newTransaction.TotalCost + "')", Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Transaction Succesfully Added");
                 Con.Close();

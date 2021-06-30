@@ -14,7 +14,7 @@ namespace FuelStationManagementSystem.WUI {
     public partial class ViewTransactionLineForm : Form {
 
         public SqlConnection Con { get; set; }
-        public Guid TransactionID { get; set; }
+        public Guid ID { get; set; }
 
         public ViewTransactionLineForm() {
             InitializeComponent();
@@ -26,8 +26,11 @@ namespace FuelStationManagementSystem.WUI {
 
         private void PopulateTransactionLine() {
             try {
+
+                string transactionId = Convert.ToString(ID);
+                          
                 Con.Open();
-                string Myquery = "SELECT * FROM TransactionLine";//  WHERE TransactionID = '" + TransactionID + "'";
+                string Myquery = "SELECT * FROM TransactionLine WHERE TransactionID = '" + transactionId + "'";
                 SqlDataAdapter da = new SqlDataAdapter(Myquery, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 var ds = new DataSet();

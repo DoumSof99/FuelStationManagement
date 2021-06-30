@@ -99,6 +99,9 @@ namespace FuelStationManagementSystem.WUI {
             // 
             // gridTransactionLine
             // 
+            this.gridTransactionLine.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gridTransactionLine.DataSource = this.transactionLineBindingSource;
             this.gridTransactionLine.Location = new System.Drawing.Point(12, 130);
             this.gridTransactionLine.MainView = this.gridViewTransactionLine;
@@ -208,6 +211,7 @@ namespace FuelStationManagementSystem.WUI {
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "ViewTransactionLineForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ViewTransactionLineForm";
             this.Load += new System.EventHandler(this.ViewTransactionLineForm_Load);
             this.panel1.ResumeLayout(false);

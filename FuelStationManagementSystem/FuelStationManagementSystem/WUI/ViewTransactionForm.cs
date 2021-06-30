@@ -8,12 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using DevExpress.Utils;
 
 namespace FuelStationManagementSystem.WUI {
     public partial class ViewTransactionForm : Form {
 
         public SqlConnection Con { get; set; }
-        public Guid TransactionID { get; set; }
+        public Guid Id { get; set; }
 
         public ViewTransactionForm() {
             InitializeComponent();
@@ -41,22 +42,17 @@ namespace FuelStationManagementSystem.WUI {
             }
         }
 
-        private void gridTransaction_DoubleClick(object sender, EventArgs e) {
-
-           
+        private void gridViewTransaction_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {
+            ctrlCustomerID.EditValue = Convert.ToString(gridViewTransaction.GetFocusedRowCellValue("CustomerID"));
         }
 
-        private void gridViewTransaction_DoubleClick(object sender, EventArgs e) {
-            TransactionID = Guid.Parse(Convert.ToString(gridViewTransaction.GetFocusedRowCellValue("ID")));
+        private void btnShowTransactionLine_Click(object sender, EventArgs e) {
+            Id = Guid.Parse(Convert.ToString(gridViewTransaction.GetFocusedRowCellValue("ID")));
 
             ViewTransactionLineForm viewTransactionLine = new ViewTransactionLineForm();
             viewTransactionLine.Con = Con;
-            viewTransactionLine.TransactionID = TransactionID;
+            viewTransactionLine.ID = Id;
             viewTransactionLine.ShowDialog();
-        }
-
-        private void gridTransaction_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e) {
-           
         }
     }
 }
