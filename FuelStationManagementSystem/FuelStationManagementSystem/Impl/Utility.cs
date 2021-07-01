@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FuelStationManagementSystem.Impl {
-    public class Controller {
+    public class Utility {
 
         public static void PopulateController(SqlConnection con, string query, DevExpress.XtraGrid.GridControl grid) {
             
@@ -34,11 +34,12 @@ namespace FuelStationManagementSystem.Impl {
                 SqlCommand cmd = new SqlCommand(query, con);
                 int rowsAffected = cmd.ExecuteNonQuery();
                 con.Close();
-                Controller.PopulateController(con, Resource.QPopulateCustomer, grid);
+                //Controller.PopulateController(con, Resource.QPopulateCustomer, grid);
                 return rowsAffected;
             }
             catch (Exception ex) {
                 con.Close();
+                MessageBox.Show(ex.Message);
                 return 0;
             }
         }

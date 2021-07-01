@@ -73,9 +73,10 @@ namespace FuelStationManagementSystem.WUI {
                 Con.Close();
                 Populate();
             }
-            catch (Exception) {
+            catch (Exception ex) {
 
-                MessageBox.Show("Please enter all values");
+                MessageBox.Show(ex.Message);
+                Con.Close();
             }
         }
 
@@ -92,6 +93,7 @@ namespace FuelStationManagementSystem.WUI {
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
+                Con.Close();
             }
         }
 

@@ -385,6 +385,7 @@ namespace FuelStationManagementSystem.WUI {
             this.colCost});
             this.gridViewItems.GridControl = this.gridItems;
             this.gridViewItems.Name = "gridViewItems";
+            this.gridViewItems.OptionsView.ShowGroupPanel = false;
             this.gridViewItems.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gridViewItems_FocusedRowChanged);
             // 
             // colID

@@ -24,24 +24,25 @@ namespace FuelStationManagementSystem.WUI {
         #region Events
 
         private void CustomerForm_Load(object sender, EventArgs e) {
-            Controller.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
-            Controller.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
+            Utility.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
+            Utility.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
             AddCustomer();
-            Controller.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
-            Controller.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
+            Utility.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
+            
         }
 
         private void btnEdit_Click(object sender, EventArgs e) {
             EditCustomer();
-            Controller.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
+            Utility.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
+            
         }
 
         private void btnDelete_Click(object sender, EventArgs e) {
             DeleteCustomer(ctrlCardNumber);
-            Controller.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
+            Utility.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);          
         }
 
         #endregion
@@ -66,34 +67,37 @@ namespace FuelStationManagementSystem.WUI {
             else {
                 //string myquery = "INSERT INTO Customer (ID, Name, Surname, CardNumber) VALUES ('" + newCustomer.ID + "', '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')";
                 string myquery = String.Format(Resource.QAddCustomer, newCustomer.Name, newCustomer.Surname, newCustomer.CardNumber, newCustomer.ID);
-                Controller.DatabaseProcedure(Con, myquery, gridCustomers);
+                Utility.DatabaseProcedure(Con, myquery, gridCustomers);
                 MessageBox.Show("Customer Succesfully Added");
+                Utility.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
             }
         }
 
         private void DeleteCustomer(DevExpress.XtraEditors.TextEdit cardNumber) {
             string cardNum = Convert.ToString(cardNumber.EditValue);
             string myquery = String.Format(Resource.QDeleteCustomer, cardNum);
-            int rowsAffected = Controller.DatabaseProcedure(Con, myquery, gridCustomers);
+            int rowsAffected = Utility.DatabaseProcedure(Con, myquery, gridCustomers);
 
             if (rowsAffected == 0) {
                 MessageBox.Show("Customer was not deleted!");
             }
             else {
                 MessageBox.Show("Customer Successfully Deleted");
+                Utility.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
             }
 
         }
 
         private void EditCustomer() {
 
-            string myquery = String.Format(Resource.QEditCustomer, ctrlName.EditValue, ctrlSurname.EditValue, ctrlCardNumber.EditValue);  //"UPDATE Customer SET Name='" + ctrlName.EditValue + "',Surname='" + ctrlSurname.EditValue + "' WHERE CardNumber='" + ctrlCardNumber.EditValue + "'";
-            int rowsAffected = Controller.DatabaseProcedure(Con, myquery, gridCustomers);
+            string myquery = String.Format(Resource.QEditCustomer, Convert.ToString(ctrlName.EditValue), Convert.ToString(ctrlSurname.EditValue), Convert.ToString(ctrlCardNumber.EditValue));  //"UPDATE Customer SET Name='" + ctrlName.EditValue + "',Surname='" + ctrlSurname.EditValue + "' WHERE CardNumber='" + ctrlCardNumber.EditValue + "'";
+            int rowsAffected = Utility.DatabaseProcedure(Con, myquery, gridCustomers);
             if (rowsAffected == 0) {
                 MessageBox.Show("Customer was not Updated!");
             }
             else {
                 MessageBox.Show("Customer Successfully Updated");
+                Utility.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
             }
 
         }

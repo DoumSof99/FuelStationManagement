@@ -56,6 +56,7 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.btnDelete = new DevExpress.XtraEditors.SimpleButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
@@ -242,7 +243,7 @@ namespace FuelStationManagementSystem.WUI
             this.btnDismiss.Size = new System.Drawing.Size(88, 33);
             this.btnDismiss.TabIndex = 29;
             this.btnDismiss.Text = "Dismiss";
-            this.btnDismiss.Click += new System.EventHandler(this.btnDelete_Click);
+            this.btnDismiss.Click += new System.EventHandler(this.btnDismiss_Click);
             // 
             // gridEmployees
             // 
@@ -367,11 +368,29 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl6.TabIndex = 35;
             this.labelControl6.Text = "Salary:";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Appearance.BackColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Appearance.BorderColor = System.Drawing.Color.Crimson;
+            this.btnDelete.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Appearance.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Appearance.Options.UseBackColor = true;
+            this.btnDelete.Appearance.Options.UseBorderColor = true;
+            this.btnDelete.Appearance.Options.UseFont = true;
+            this.btnDelete.Appearance.Options.UseForeColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(141, 457);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(88, 33);
+            this.btnDelete.TabIndex = 36;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click_1);
+            // 
             // EmployeeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(903, 668);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
             this.Controls.Add(this.labelControl4);
@@ -435,5 +454,6 @@ namespace FuelStationManagementSystem.WUI
         private DevExpress.XtraGrid.Columns.GridColumn colDateStart;
         private DevExpress.XtraGrid.Columns.GridColumn colDateEnd;
         private DevExpress.XtraGrid.Columns.GridColumn colSalary;
+        private DevExpress.XtraEditors.SimpleButton btnDelete;
     }
 }

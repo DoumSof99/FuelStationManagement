@@ -84,7 +84,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet4.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Impl\Controller.cs" />
+    <Compile Include="Impl\Utility.cs" />
     <Compile Include="Resource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -264,11 +264,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Queries\QAddEmployee.sql" />
     <Content Include="Queries\QAddTransactionLines.sql" />
     <Content Include="Queries\QAddTransaction.sql" />
+    <Content Include="Queries\QDeleteEmployee.sql" />
+    <Content Include="Queries\QEditEmployee.sql" />
+    <Content Include="Queries\QDismissEmployee.sql" />
     <Content Include="Queries\QEditCustomer.sql" />
     <Content Include="Queries\QAddCustomer.sql" />
     <Content Include="Queries\QDeleteCustomer.sql" />
+    <Content Include="Queries\QPopulateEmployee.sql" />
     <Content Include="Queries\QPopulateCustomer.sql" />
     <Content Include="Queries\QPopulateTransaction.sql" />
     <Content Include="Queries\QTransactionFilterByItem.sql" />

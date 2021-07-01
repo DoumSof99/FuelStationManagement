@@ -27,28 +27,38 @@ namespace FuelStationManagementSystem.WUI
         #region Events
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
-            Populate();
-            Controller.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
+            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);
+            Utility.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddEmployee();
-            Populate();
-            Controller.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
+            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);
+            
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            EditCustomer();
-            Controller.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
+            EditEmployee();
+            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);
+            
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDismiss_Click(object sender, EventArgs e)
         {
-            DeleteCustomer();
-            Controller.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
+            DismissEmployee();
+            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);
+            Utility.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
         }
+
+        private void btnDelete_Click_1(object sender, EventArgs e)
+        {
+            DeleteEmployee();
+            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);         
+        }
+
+        
 
         #endregion
 
@@ -64,8 +74,9 @@ namespace FuelStationManagementSystem.WUI
             if (!string.IsNullOrWhiteSpace(emplName) && !string.IsNullOrWhiteSpace(emplSurname) && decimal.TryParse(emplSalary, out salary))
             {
                 Employee newEmployee = new Employee(emplName, emplSurname, salary);
-                string myquery = "INSERT INTO Employee (ID, Name, Surname, DateStart, Salary) VALUES (NEWID(), '" + newEmployee.Name + "', '" + newEmployee.Surname + "', '" + newEmployee.GetStartDate() + "', '" + newEmployee.Salary + "'";
-                int rowsAffected = DatabaseProcedure(myquery);
+                //string myquery = "INSERT INTO Employee (ID, Name, Surname, DateStart, Salary) VALUES (NEWID(), '" + newEmployee.Name + "', '" + newEmployee.Surname + "', '" + newEmployee.GetStartDate() + "', '" + newEmployee.Salary + "'";
+                string myquery = String.Format(Resource.QAddEmployee, newEmployee.Name, newEmployee.Surname, newEmployee.GetStartDate(), newEmployee.Salary);
+                int rowsAffected = Utility.DatabaseProcedure(Con, myquery, gridEmployees);
                 if (rowsAffected == 0)
                 {
                     MessageBox.Show("Employee was not Added");
@@ -73,6 +84,7 @@ namespace FuelStationManagementSystem.WUI
                 else
                 {
                     MessageBox.Show("Employee Succesfully Added");
+                    Utility.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
                 }      
             }
             else
@@ -81,13 +93,14 @@ namespace FuelStationManagementSystem.WUI
             }
         }
 
-        private void DeleteCustomer()
+        private void DismissEmployee()
         {
             try
             {
                 Guid id = Guid.Parse(Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("ID")));
-                string myquery = "UPDATE Employee SET DateEnd='" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE Id='" + id + "'";
-                int rowsAffected = DatabaseProcedure(myquery);
+                //string myquery = "UPDATE Employee SET DateEnd='" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE ID='" + id + "'";
+                string myquery = String.Format(Resource.QDismissEmployee, DateTime.Now.ToString("yyyy-MM-dd"), id);
+                int rowsAffected = Utility.DatabaseProcedure(Con, myquery, gridEmployees);
 
                 if (rowsAffected == 0)
                 {
@@ -96,6 +109,7 @@ namespace FuelStationManagementSystem.WUI
                 else
                 {
                     MessageBox.Show("Employee Successfully Dismissed");
+                    Utility.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
                 }
             }
             catch (Exception ex)
@@ -104,13 +118,39 @@ namespace FuelStationManagementSystem.WUI
             }
         }
 
-        private void EditCustomer()
+        private void DeleteEmployee()
         {
             try
             {
                 Guid id = Guid.Parse(Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("ID")));
-                string myquery = "UPDATE Employee SET Name='" + ctrlName.Text + "',Surname='" + ctrlSurname.Text + "',Salary='" + ctrlSalary.Text + "' WHERE ID='" + id + "'";
-                int rowsAffected = DatabaseProcedure(myquery);
+                string myquery = String.Format(Resource.QDeleteEmployee, id);
+                int rowsAffected = Utility.DatabaseProcedure(Con, myquery, gridEmployees);
+
+                if (rowsAffected == 0)
+                {
+                    MessageBox.Show("Employee was not Deleted!");
+                }
+                else
+                {
+                    MessageBox.Show("Employee Successfully Deleted");
+                    Utility.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void EditEmployee()
+        {
+            try 
+            { 
+            
+                Guid id = Guid.Parse(Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("ID")));
+                //string myquery = "UPDATE Employee SET Name='" + ctrlName.Text + "',Surname='" + ctrlSurname.Text + "',Salary='" + ctrlSalary.Text + "' WHERE ID='" + id + "'";
+                string myquery = String.Format(Resource.QEditEmployee, Convert.ToString(ctrlName.EditValue), Convert.ToString(ctrlSurname.EditValue), Convert.ToDecimal(ctrlSalary.EditValue.ToString()), id);
+                int rowsAffected = Utility.DatabaseProcedure(Con, myquery, gridEmployees);
 
                 if (rowsAffected == 0)
                 {
@@ -127,13 +167,6 @@ namespace FuelStationManagementSystem.WUI
             }
         }
 
-        //private void ResetFields()
-        //{
-        //    ctrlName.Text = String.Empty;
-        //    ctrlSurname.Text = String.Empty;
-        //    ctrlSalary.Text = String.Empty;
-        //}
-
         private void gridViewCustomers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
         {
             ctrlName.Text = Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("Name"));
@@ -141,45 +174,8 @@ namespace FuelStationManagementSystem.WUI
             ctrlSalary.Text = Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("Salary"));
         }
 
-        private void Populate()
-        {
-            try
-            {
-                Con.Open();
-                string MyQuery = "SELECT * FROM Employee";
-                SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                gridEmployees.DataSource = ds.Tables[0];
-                Con.Close();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private int DatabaseProcedure(string myquery)
-        {
-            try
-            {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand(myquery);
-                int rowsAffected = cmd.ExecuteNonQuery();
-                Con.Close();
-                Populate();
-                return rowsAffected;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Con.Close();
-                return 0;
-            }
-        }
-
         #endregion
+
+        
     }
 }
