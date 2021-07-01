@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace FuelStationManagementSystem {
+namespace FuelStationManagementSystem.DataSets {
     
     
     /// <summary>
@@ -1303,7 +1303,7 @@ namespace FuelStationManagementSystem {
         }
     }
 }
-namespace FuelStationManagementSystem.FuelStationManagementDataSet4TableAdapters {
+namespace FuelStationManagementSystem.DataSets.FuelStationManagementDataSet4TableAdapters {
     
     
     /// <summary>

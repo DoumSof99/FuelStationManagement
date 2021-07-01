@@ -59,30 +59,36 @@
   <ItemGroup>
     <Compile Include="Base\Entity.cs" />
     <Compile Include="Base\Person.cs" />
-    <Compile Include="FuelStationManagementDataSet.Designer.cs">
+    <Compile Include="DataSets\FuelStationManagementDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FuelStationManagementDataSet1.Designer.cs">
+    <Compile Include="DataSets\FuelStationManagementDataSet1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet1.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FuelStationManagementDataSet2.Designer.cs">
+    <Compile Include="DataSets\FuelStationManagementDataSet2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FuelStationManagementDataSet3.Designer.cs">
+    <Compile Include="DataSets\FuelStationManagementDataSet3.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet3.xsd</DependentUpon>
     </Compile>
-    <Compile Include="FuelStationManagementDataSet4.Designer.cs">
+    <Compile Include="DataSets\FuelStationManagementDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>FuelStationManagementDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Impl\Controller.cs" />
+    <Compile Include="Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
     </Compile>
     <Compile Include="WUI\ChooseCustomerForm.cs">
       <SubType>Form</SubType>
@@ -158,6 +164,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="WUI\ChooseCustomerForm.resx">
       <DependentUpon>ChooseCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,59 +195,59 @@
     <EmbeddedResource Include="WUI\ViewTransactionLineForm.resx">
       <DependentUpon>ViewTransactionLineForm.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="FuelStationManagementDataSet.xsc">
+    <None Include="DataSets\FuelStationManagementDataSet.xsc">
       <DependentUpon>FuelStationManagementDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet.xsd">
+    <None Include="DataSets\FuelStationManagementDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>FuelStationManagementDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FuelStationManagementDataSet.xss">
+    <None Include="DataSets\FuelStationManagementDataSet.xss">
       <DependentUpon>FuelStationManagementDataSet.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet1.xsc">
+    <None Include="DataSets\FuelStationManagementDataSet1.xsc">
       <DependentUpon>FuelStationManagementDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet1.xsd">
+    <None Include="DataSets\FuelStationManagementDataSet1.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>FuelStationManagementDataSet1.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FuelStationManagementDataSet1.xss">
+    <None Include="DataSets\FuelStationManagementDataSet1.xss">
       <DependentUpon>FuelStationManagementDataSet1.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet2.xsc">
+    <None Include="DataSets\FuelStationManagementDataSet2.xsc">
       <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet2.xsd">
+    <None Include="DataSets\FuelStationManagementDataSet2.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>FuelStationManagementDataSet2.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FuelStationManagementDataSet2.xss">
+    <None Include="DataSets\FuelStationManagementDataSet2.xss">
       <DependentUpon>FuelStationManagementDataSet2.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet3.xsc">
+    <None Include="DataSets\FuelStationManagementDataSet3.xsc">
       <DependentUpon>FuelStationManagementDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet3.xsd">
+    <None Include="DataSets\FuelStationManagementDataSet3.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>FuelStationManagementDataSet3.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FuelStationManagementDataSet3.xss">
+    <None Include="DataSets\FuelStationManagementDataSet3.xss">
       <DependentUpon>FuelStationManagementDataSet3.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet4.xsc">
+    <None Include="DataSets\FuelStationManagementDataSet4.xsc">
       <DependentUpon>FuelStationManagementDataSet4.xsd</DependentUpon>
     </None>
-    <None Include="FuelStationManagementDataSet4.xsd">
+    <None Include="DataSets\FuelStationManagementDataSet4.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>FuelStationManagementDataSet4.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="FuelStationManagementDataSet4.xss">
+    <None Include="DataSets\FuelStationManagementDataSet4.xss">
       <DependentUpon>FuelStationManagementDataSet4.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
@@ -253,6 +263,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Queries\QDeleteCusomer.sql" />
+    <Content Include="Queries\QPopulateCustomer.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

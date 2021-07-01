@@ -1,0 +1,1 @@
+﻿SELECT Name, Surname, CardNumber FROM Customer

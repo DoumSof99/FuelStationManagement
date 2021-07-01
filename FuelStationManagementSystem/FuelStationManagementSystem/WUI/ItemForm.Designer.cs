@@ -48,7 +48,7 @@ namespace FuelStationManagementSystem.WUI {
             this.ctrlCost = new DevExpress.XtraEditors.TextEdit();
             this.gridItems = new DevExpress.XtraGrid.GridControl();
             this.itemsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fuelStationManagementDataSet2 = new FuelStationManagementSystem.FuelStationManagementDataSet2();
+            this.fuelStationManagementDataSet2 = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet2();
             this.gridViewItems = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCode = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -56,7 +56,7 @@ namespace FuelStationManagementSystem.WUI {
             this.colItemType = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colPrice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCost = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.itemsTableAdapter = new FuelStationManagementSystem.FuelStationManagementDataSet2TableAdapters.ItemsTableAdapter();
+            this.itemsTableAdapter = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet2TableAdapters.ItemsTableAdapter();
             this.ctrlItemType = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl3)).BeginInit();
@@ -532,9 +532,9 @@ namespace FuelStationManagementSystem.WUI {
         private DevExpress.XtraEditors.TextEdit ctrlCost;
         private DevExpress.XtraGrid.GridControl gridItems;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewItems;
-        private FuelStationManagementDataSet2 fuelStationManagementDataSet2;
+        private DataSets.FuelStationManagementDataSet2 fuelStationManagementDataSet2;
         private System.Windows.Forms.BindingSource itemsBindingSource;
-        private FuelStationManagementDataSet2TableAdapters.ItemsTableAdapter itemsTableAdapter;
+        private DataSets.FuelStationManagementDataSet2TableAdapters.ItemsTableAdapter itemsTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colCode;
         private DevExpress.XtraGrid.Columns.GridColumn colDescription;

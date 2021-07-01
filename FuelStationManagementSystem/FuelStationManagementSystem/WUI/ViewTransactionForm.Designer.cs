@@ -31,7 +31,7 @@ namespace FuelStationManagementSystem.WUI {
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridTransaction = new DevExpress.XtraGrid.GridControl();
             this.transactionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fuelStationManagementDataSet1 = new FuelStationManagementSystem.FuelStationManagementDataSet1();
+            this.fuelStationManagementDataSet1 = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet1();
             this.gridViewTransaction = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colDate = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -39,7 +39,7 @@ namespace FuelStationManagementSystem.WUI {
             this.colDiscountValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalValue = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTotalCost = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.transactionTableAdapter = new FuelStationManagementSystem.FuelStationManagementDataSet1TableAdapters.TransactionTableAdapter();
+            this.transactionTableAdapter = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet1TableAdapters.TransactionTableAdapter();
             this.btnShowTransactionLine = new DevExpress.XtraEditors.SimpleButton();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
@@ -102,9 +102,7 @@ namespace FuelStationManagementSystem.WUI {
             // 
             // gridTransaction
             // 
-            this.gridTransaction.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridTransaction.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gridTransaction.DataSource = this.transactionBindingSource;
             this.gridTransaction.Location = new System.Drawing.Point(12, 166);
             this.gridTransaction.MainView = this.gridViewTransaction;
@@ -280,9 +278,9 @@ namespace FuelStationManagementSystem.WUI {
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraGrid.GridControl gridTransaction;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewTransaction;
-        private FuelStationManagementDataSet1 fuelStationManagementDataSet1;
+        private DataSets.FuelStationManagementDataSet1 fuelStationManagementDataSet1;
         private System.Windows.Forms.BindingSource transactionBindingSource;
-        private FuelStationManagementDataSet1TableAdapters.TransactionTableAdapter transactionTableAdapter;
+        private DataSets.FuelStationManagementDataSet1TableAdapters.TransactionTableAdapter transactionTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colDate;
         private DevExpress.XtraGrid.Columns.GridColumn colCustomerID;

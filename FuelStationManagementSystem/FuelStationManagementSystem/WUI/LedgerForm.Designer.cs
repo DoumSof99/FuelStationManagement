@@ -33,10 +33,10 @@ namespace FuelStationManagementSystem.WUI {
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.ctrlDateFrom = new DevExpress.XtraEditors.DateEdit();
             this.ctrlDateTo = new DevExpress.XtraEditors.DateEdit();
-            this.fuelStationManagementDataSet41 = new FuelStationManagementSystem.FuelStationManagementDataSet4();
-            this.transactionTableAdapter1 = new FuelStationManagementSystem.FuelStationManagementDataSet4TableAdapters.TransactionTableAdapter();
-            this.fuelStationManagementDataSet42 = new FuelStationManagementSystem.FuelStationManagementDataSet4();
-            this.transactionTableAdapter2 = new FuelStationManagementSystem.FuelStationManagementDataSet4TableAdapters.TransactionTableAdapter();
+            this.fuelStationManagementDataSet41 = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet4();
+            this.transactionTableAdapter1 = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet4TableAdapters.TransactionTableAdapter();
+            this.fuelStationManagementDataSet42 = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet4();
+            this.transactionTableAdapter2 = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet4TableAdapters.TransactionTableAdapter();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.ctrlIncome = new DevExpress.XtraEditors.TextEdit();
@@ -98,6 +98,7 @@ namespace FuelStationManagementSystem.WUI {
             // 
             // labelControl4
             // 
+            this.labelControl4.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl4.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelControl4.Appearance.Options.UseFont = true;
@@ -110,6 +111,7 @@ namespace FuelStationManagementSystem.WUI {
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.btnAdd.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -136,6 +138,7 @@ namespace FuelStationManagementSystem.WUI {
             // 
             // labelControl5
             // 
+            this.labelControl5.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
             this.labelControl5.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.labelControl5.Appearance.Options.UseFont = true;
@@ -148,6 +151,7 @@ namespace FuelStationManagementSystem.WUI {
             // 
             // ctrlDateFrom
             // 
+            this.ctrlDateFrom.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ctrlDateFrom.EditValue = null;
             this.ctrlDateFrom.Location = new System.Drawing.Point(33, 158);
             this.ctrlDateFrom.Name = "ctrlDateFrom";
@@ -160,6 +164,7 @@ namespace FuelStationManagementSystem.WUI {
             // 
             // ctrlDateTo
             // 
+            this.ctrlDateTo.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ctrlDateTo.EditValue = null;
             this.ctrlDateTo.Location = new System.Drawing.Point(33, 246);
             this.ctrlDateTo.Name = "ctrlDateTo";
@@ -371,10 +376,10 @@ namespace FuelStationManagementSystem.WUI {
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.DateEdit ctrlDateFrom;
         private DevExpress.XtraEditors.DateEdit ctrlDateTo;
-        private FuelStationManagementDataSet4 fuelStationManagementDataSet41;
-        private FuelStationManagementDataSet4TableAdapters.TransactionTableAdapter transactionTableAdapter1;
-        private FuelStationManagementDataSet4 fuelStationManagementDataSet42;
-        private FuelStationManagementDataSet4TableAdapters.TransactionTableAdapter transactionTableAdapter2;
+        private DataSets.FuelStationManagementDataSet4 fuelStationManagementDataSet41;
+        private DataSets.FuelStationManagementDataSet4TableAdapters.TransactionTableAdapter transactionTableAdapter1;
+        private DataSets.FuelStationManagementDataSet4 fuelStationManagementDataSet42;
+        private DataSets.FuelStationManagementDataSet4TableAdapters.TransactionTableAdapter transactionTableAdapter2;
         private DevExpress.XtraEditors.LabelControl labelControl7;
         private DevExpress.XtraEditors.SeparatorControl separatorControl1;
         private DevExpress.XtraEditors.TextEdit ctrlIncome;

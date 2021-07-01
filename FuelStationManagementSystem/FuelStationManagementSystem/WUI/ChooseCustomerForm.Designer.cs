@@ -194,6 +194,7 @@ namespace FuelStationManagementSystem.WUI
             // 
             // btnAdd
             // 
+            this.btnAdd.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnAdd.Appearance.BackColor = System.Drawing.Color.Crimson;
             this.btnAdd.Appearance.BorderColor = System.Drawing.Color.Crimson;
             this.btnAdd.Appearance.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

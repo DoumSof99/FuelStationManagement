@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using FuelStationManagementSystem.Impl;
+using DevExpress.XtraGrid;
 
 namespace FuelStationManagementSystem.WUI
 {
@@ -26,7 +27,7 @@ namespace FuelStationManagementSystem.WUI
 
         private void CustomerForm_Load(object sender, EventArgs e)
         {
-            Populate();
+            Controller.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
             ResetFields();
         }
 
@@ -43,27 +44,30 @@ namespace FuelStationManagementSystem.WUI
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            DeleteCustomer();
+            DeleteCustomer(ctrlCardNumber);
         }
 
         private void Populate()
         {
-            try
-            {
-                Con.Open();
-                string MyQuery = "SELECT Name, Surname, CardNumber FROM Customer";
-                SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                gridCustomers.DataSource = ds.Tables[0];
-                Con.Close();
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
-            }
+           
+
+            //try
+            //{
+            //    Con.Open();
+            //    string MyQuery = Resource.QPopulateCustomer;
+            //    SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
+            //    SqlCommandBuilder builder = new SqlCommandBuilder(da);
+            //    var ds = new DataSet();
+            //    da.Fill(ds);
+            //    gridCustomers.DataSource = ds.Tables[0];
+            //    Con.Close();
+            //}
+            //catch (Exception ex)
+            //{
+
+            //    MessageBox.Show(ex.Message);
+            //}
         }
 
         private void AddCustomer()
@@ -96,16 +100,17 @@ namespace FuelStationManagementSystem.WUI
             //}
         }
 
-        private void DeleteCustomer()
+        private void DeleteCustomer(DevExpress.XtraEditors.TextEdit CardNumber)
         {
-            if (ctrlCardNumber.Text == String.Empty)
+            if (CardNumber.Text == String.Empty)
             {
                 MessageBox.Show("Enter the Customer's Card Number");
             }
             else
             {
                 Con.Open();
-                string myquery = "DELETE FROM Customer WHERE CardNumber='" + ctrlCardNumber.Text + "'";
+                string cardNum = Convert.ToString(CardNumber.EditValue);
+                string myquery = Resource.QDeleteCusomer + String.Format("'{0}'", cardNum);  //"DELETE FROM Customer WHERE CardNumber='" + ctrlCardNumber.Text + "'";
                 SqlCommand cmd = new SqlCommand(myquery, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Customer Successfully Deleted");
@@ -114,6 +119,7 @@ namespace FuelStationManagementSystem.WUI
                 ResetFields();
             }
         }
+
 
         private void EditCustomer()
         {

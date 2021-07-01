@@ -31,7 +31,7 @@ namespace FuelStationManagementSystem.WUI {
             this.panel2 = new System.Windows.Forms.Panel();
             this.gridTransactionLine = new DevExpress.XtraGrid.GridControl();
             this.transactionLineBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fuelStationManagementDataSet3 = new FuelStationManagementSystem.FuelStationManagementDataSet3();
+            this.fuelStationManagementDataSet3 = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet3();
             this.gridViewTransactionLine = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colID = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTransactionID = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -42,7 +42,7 @@ namespace FuelStationManagementSystem.WUI {
             this.colItemCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colCost = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colItemType = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.transactionLineTableAdapter = new FuelStationManagementSystem.FuelStationManagementDataSet3TableAdapters.TransactionLineTableAdapter();
+            this.transactionLineTableAdapter = new FuelStationManagementSystem.DataSets.FuelStationManagementDataSet3TableAdapters.TransactionLineTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridTransactionLine)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.transactionLineBindingSource)).BeginInit();
@@ -232,9 +232,9 @@ namespace FuelStationManagementSystem.WUI {
         private System.Windows.Forms.Panel panel2;
         private DevExpress.XtraGrid.GridControl gridTransactionLine;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewTransactionLine;
-        private FuelStationManagementDataSet3 fuelStationManagementDataSet3;
+        private DataSets.FuelStationManagementDataSet3 fuelStationManagementDataSet3;
         private System.Windows.Forms.BindingSource transactionLineBindingSource;
-        private FuelStationManagementDataSet3TableAdapters.TransactionLineTableAdapter transactionLineTableAdapter;
+        private DataSets.FuelStationManagementDataSet3TableAdapters.TransactionLineTableAdapter transactionLineTableAdapter;
         private DevExpress.XtraGrid.Columns.GridColumn colID;
         private DevExpress.XtraGrid.Columns.GridColumn colTransactionID;
         private DevExpress.XtraGrid.Columns.GridColumn colItemID;
