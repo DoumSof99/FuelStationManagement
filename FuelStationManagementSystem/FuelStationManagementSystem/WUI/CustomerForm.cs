@@ -24,25 +24,25 @@ namespace FuelStationManagementSystem.WUI {
         #region Events
 
         private void CustomerForm_Load(object sender, EventArgs e) {
-            Utility.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
+            Utility.PopulateUtility(Con, Resource.QPopulateCustomer, gridCustomers);
             Utility.ResetFields(ctrlName, ctrlSurname, ctrlCardNumber);
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
             AddCustomer();
-            Utility.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
+            Utility.PopulateUtility(Con, Resource.QPopulateCustomer, gridCustomers);
             
         }
 
         private void btnEdit_Click(object sender, EventArgs e) {
             EditCustomer();
-            Utility.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);
+            Utility.PopulateUtility(Con, Resource.QPopulateCustomer, gridCustomers);
             
         }
 
         private void btnDelete_Click(object sender, EventArgs e) {
             DeleteCustomer(ctrlCardNumber);
-            Utility.PopulateController(Con, Resource.QPopulateCustomer, gridCustomers);          
+            Utility.PopulateUtility(Con, Resource.QPopulateCustomer, gridCustomers);          
         }
 
         #endregion

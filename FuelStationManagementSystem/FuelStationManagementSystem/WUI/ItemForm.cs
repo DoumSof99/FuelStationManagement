@@ -39,7 +39,7 @@ namespace FuelStationManagementSystem.WUI {
 
         private void Populate() {
             Con.Open();
-            string MyQuery = "SELECT ID, Code, Description, ItemType, Price, Cost FROM Items";
+            string MyQuery = String.Format(Resource.QPopulateItem);
             SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(da);
             var ds = new DataSet();
@@ -67,7 +67,8 @@ namespace FuelStationManagementSystem.WUI {
 
             try {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Items (ID, Code, Description, ItemType, Price, Cost) VALUES (NEWID(), '" + code + "', '" + descreption + "', '" + itemType + "', '" + price + "', '" + cost + "')", Con);
+                string MyQuery = String.Format(Resource.QAddItem, code, descreption, itemType, price, cost);
+                SqlCommand cmd = new SqlCommand(MyQuery, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Items Succesfully Added");
                 Con.Close();

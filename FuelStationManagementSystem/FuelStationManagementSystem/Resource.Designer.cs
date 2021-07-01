@@ -81,6 +81,16 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO Items (ID, Code, [Description], ItemType, Price, Cost) 
+        ///VALUES(NEWID(), &apos;{0}&apos;, &apos;{1}&apos;, &apos;{2}&apos;, {3}, {4}, {5}).
+        /// </summary>
+        internal static string QAddItem {
+            get {
+                return ResourceManager.GetString("QAddItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to INSERT INTO [Transaction](ID, Date, CustomerID, DiscountValue, TotalValue, TotalCost) 
         ///VALUES(&apos;{0}&apos;, &apos;{1}&apos;, &apos;{2}&apos;, {3}, {4}, {5}).
         /// </summary>
@@ -142,9 +152,7 @@ namespace FuelStationManagementSystem {
         
         /// <summary>
         ///   Looks up a localized string similar to UPDATE Employee 
-        ///SET [Name]= &apos;{0}&apos;,
-        ///Surname=&apos;{1}&apos;,
-        ///Salary=&apos;{2}&apos;
+        ///SET [Name]= &apos;{0}&apos;, Surname=&apos;{1}&apos;, Salary=&apos;{2}&apos;
         ///WHERE ID = &apos;{3}&apos;.
         /// </summary>
         internal static string QEditEmployee {
@@ -163,11 +171,20 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT * FROM Customer.
+        ///   Looks up a localized string similar to SELECT * FROM Employee.
         /// </summary>
         internal static string QPopulateEmployee {
             get {
                 return ResourceManager.GetString("QPopulateEmployee", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT ID, Code, [Description], ItemType, Price, Cost FROM Items.
+        /// </summary>
+        internal static string QPopulateItem {
+            get {
+                return ResourceManager.GetString("QPopulateItem", resourceCulture);
             }
         }
         

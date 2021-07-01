@@ -265,6 +265,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Queries\QAddEmployee.sql" />
+    <Content Include="Queries\QAddItem.sql" />
     <Content Include="Queries\QAddTransactionLines.sql" />
     <Content Include="Queries\QAddTransaction.sql" />
     <Content Include="Queries\QDeleteEmployee.sql" />
@@ -275,6 +276,7 @@
     <Content Include="Queries\QDeleteCustomer.sql" />
     <Content Include="Queries\QPopulateEmployee.sql" />
     <Content Include="Queries\QPopulateCustomer.sql" />
+    <Content Include="Queries\QPopulateItem.sql" />
     <Content Include="Queries\QPopulateTransaction.sql" />
     <Content Include="Queries\QTransactionFilterByItem.sql" />
   </ItemGroup>

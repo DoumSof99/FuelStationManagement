@@ -10,7 +10,7 @@ using System.Windows.Forms;
 namespace FuelStationManagementSystem.Impl {
     public class Utility {
 
-        public static void PopulateController(SqlConnection con, string query, DevExpress.XtraGrid.GridControl grid) {
+        public static void PopulateUtility(SqlConnection con, string query, DevExpress.XtraGrid.GridControl grid) {
             
             try {
                 con.Open();
@@ -24,6 +24,7 @@ namespace FuelStationManagementSystem.Impl {
             catch (Exception ex) {
 
                 MessageBox.Show(ex.Message);
+                con.Close();
             }
         }
 

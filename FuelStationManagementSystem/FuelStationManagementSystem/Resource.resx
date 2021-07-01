@@ -124,6 +124,9 @@
   <data name="QAddEmployee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qaddemployee.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="QAddItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qadditem.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="QAddTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qaddtransaction.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -150,6 +153,9 @@
   </data>
   <data name="QPopulateEmployee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qpopulateemployee.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QPopulateItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qpopulateitem.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="QPopulateTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qpopulatetransaction.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>

@@ -27,35 +27,35 @@ namespace FuelStationManagementSystem.WUI
         #region Events
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
-            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);
+            Utility.PopulateUtility(Con, Resource.QPopulateEmployee, gridEmployees);
             Utility.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddEmployee();
-            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);
+            Utility.PopulateUtility(Con, Resource.QPopulateEmployee, gridEmployees);
             
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             EditEmployee();
-            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);
+            Utility.PopulateUtility(Con, Resource.QPopulateEmployee, gridEmployees);
             
         }
 
         private void btnDismiss_Click(object sender, EventArgs e)
         {
             DismissEmployee();
-            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);
+            Utility.PopulateUtility(Con, Resource.QPopulateEmployee, gridEmployees);
             Utility.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
         }
 
         private void btnDelete_Click_1(object sender, EventArgs e)
         {
             DeleteEmployee();
-            Utility.PopulateController(Con, Resource.QPopulateEmployee, gridEmployees);         
+            Utility.PopulateUtility(Con, Resource.QPopulateEmployee, gridEmployees);         
         }
 
         

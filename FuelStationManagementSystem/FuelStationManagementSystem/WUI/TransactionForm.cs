@@ -31,15 +31,16 @@ namespace FuelStationManagementSystem.WUI
         private void TransactionForm_Load(object sender, EventArgs e)
         {
             PopulateCustomerId();
-            PopulateItems();            
+            Utility.PopulateUtility(Con, Resource.QPopulateTransaction, gridItems);
         }
 
         private void ctrlItemType_SelectedValueChanged(object sender, EventArgs e) {
-            FilterByItemType();
+            string Myquery = String.Format(Resource.QTransactionFilterByItem, ctrlItemType.SelectedItem.ToString());
+            Utility.PopulateUtility(Con, Myquery, gridItems);
         }
 
         private void btnRefresh_Click(object sender, EventArgs e) {
-            PopulateItems();
+            Utility.PopulateUtility(Con, Resource.QPopulateTransaction, gridItems);
         }
         private void btnAddItem_Click(object sender, EventArgs e) {
             AddItems();
@@ -58,46 +59,6 @@ namespace FuelStationManagementSystem.WUI
         private void PopulateCustomerId()
         {
             ctrlCustomerID.Text = Convert.ToString(CustomerId);
-        }
-
-        private void PopulateItems()
-        {
-            try
-            {
-                Con.Open();
-                string Myquery = String.Format(Resource.QPopulateTransaction);
-                SqlDataAdapter da = new SqlDataAdapter(Myquery, Con);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                gridItems.DataSource = ds.Tables[0];
-                Con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Con.Close();
-            }
-        }
-
-        private void FilterByItemType()
-        {
-            try
-            {
-                Con.Open();
-                string Myquery = String.Format(Resource.QTransactionFilterByItem, ctrlItemType.SelectedItem.ToString()); 
-                SqlDataAdapter da = new SqlDataAdapter(Myquery, Con);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                gridItems.DataSource = ds.Tables[0];
-                Con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Con.Close();
-            }
         }
 
         private void AddItems() {                            
