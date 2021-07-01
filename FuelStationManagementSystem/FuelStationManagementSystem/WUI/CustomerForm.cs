@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using FuelStationManagementSystem.Impl;
+using System.Text.RegularExpressions;
 
 namespace FuelStationManagementSystem.WUI
 {
@@ -45,13 +46,81 @@ namespace FuelStationManagementSystem.WUI
         {
             DeleteCustomer();
         }
+       
+        private void AddCustomer()
+        {                            
+            string custName = Convert.ToString(ctrlName.EditValue);
+            string custSurname = Convert.ToString(ctrlSurname.EditValue);
+            string custCardNumber = Convert.ToString(ctrlCardNumber.EditValue);
+            Regex cardNumber = new Regex(@"^[1-9][0-9]{15}$");
+
+            Customer newCustomer = new Customer(custName, custSurname, custCardNumber);
+
+            if (string.IsNullOrWhiteSpace(custName) && string.IsNullOrWhiteSpace(custSurname) && string.IsNullOrWhiteSpace(custCardNumber))
+            {
+                MessageBox.Show("Please fill all the fields!");
+            }
+            else if (!cardNumber.Match(custCardNumber).Success){
+                MessageBox.Show("Invalid credit card number!");
+            }
+            else
+            {
+                string myquery = "INSERT INTO Customer (ID, Name, Surname, CardNumber) VALUES ('" + newCustomer.ID + "', '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')";
+                string message = "Customer Succesfully Added";
+                DatabaseProcedure(myquery);            
+            }
+        }
+
+        private void DeleteCustomer()
+        {                     
+            string myquery = "DELETE FROM Customer WHERE CardNumber='" + ctrlCardNumber.EditValue + "'";
+            int rowsAffected = DatabaseProcedure(myquery);
+             
+            if (rowsAffected == 0)
+            {
+                MessageBox.Show("Customer was not deleted!");
+            } else {
+                MessageBox.Show("Customer Successfully Deleted");
+            }
+            
+        }
+
+        private void EditCustomer()
+        {
+                        
+            string myquery = "UPDATE Customer SET Name='" + ctrlName.EditValue + "',Surname='" + ctrlSurname.EditValue + "' WHERE CardNumber='" + ctrlCardNumber.EditValue + "'";
+            int rowsAffected = DatabaseProcedure(myquery);
+            if (rowsAffected == 0)
+            {
+                MessageBox.Show("Customer was not Updated!");
+            }
+            else
+            {
+                MessageBox.Show("Customer Successfully Updated");
+            }
+
+        }
+
+        private void ResetFields()
+        {
+            ctrlName.EditValue = String.Empty;
+            ctrlSurname.EditValue = String.Empty;
+            ctrlCardNumber.EditValue = String.Empty;
+        }
+
+        private void gridViewCustomers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            ctrlName.EditValue = Convert.ToString(gridViewCustomers.GetFocusedRowCellValue("Name"));
+            ctrlSurname.EditValue = Convert.ToString(gridViewCustomers.GetFocusedRowCellValue("Surname"));
+            ctrlCardNumber.EditValue = Convert.ToString(gridViewCustomers.GetFocusedRowCellValue("CardNumber"));
+        }
 
         private void Populate()
         {
             try
             {
                 Con.Open();
-                string MyQuery = "SELECT Name, Surname, CardNumber FROM Customer";
+                string MyQuery = "SELECT * FROM Customer";
                 SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 var ds = new DataSet();
@@ -61,91 +130,27 @@ namespace FuelStationManagementSystem.WUI
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void AddCustomer()
+        private int DatabaseProcedure(string myquery)
         {
-            //if (!string.IsNullOrWhiteSpace(ctrlName.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlSurname.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlCardNumber.Text)){                    
-            string custName = Convert.ToString(ctrlName.Text);
-            string custSurname = Convert.ToString(ctrlSurname.Text);
-            string custCardNumber = Convert.ToString(ctrlCardNumber.Text);
-
-
-            Customer newCustomer = new Customer(custName, custSurname, custCardNumber);
-
             try
             {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Customer (ID, Name, Surname, CardNumber) VALUES (NEWID(), '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')", Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Customer Succesfully Added");
-                Con.Close();
-                Populate();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Con.Close();
-            }
-            //}
-            //else {
-            //    MessageBox.Show("Please add all the values correctly");
-            //}
-        }
-
-        private void DeleteCustomer()
-        {
-            if (ctrlCardNumber.Text == String.Empty)
-            {
-                MessageBox.Show("Enter the Customer's Card Number");
-            }
-            else
-            {
-                Con.Open();
-                string myquery = "DELETE FROM Customer WHERE CardNumber='" + ctrlCardNumber.Text + "'";
                 SqlCommand cmd = new SqlCommand(myquery, Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Customer Successfully Deleted");
+                int rowsAffected = cmd.ExecuteNonQuery();
                 Con.Close();
                 Populate();
                 ResetFields();
-            }
-        }
-
-        private void EditCustomer()
-        {
-            try
-            {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Customer SET Name='" + ctrlName.Text + "',Surname='" + ctrlSurname.Text + "' WHERE CardNumber='" + ctrlCardNumber.Text + "'", Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Customer Successfully Updated");
-                Con.Close();
-                Populate();
-                ResetFields();
+                return rowsAffected;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
                 Con.Close();
+                return 0;
             }
-        }
-
-        private void ResetFields()
-        {
-            ctrlName.Text = String.Empty;
-            ctrlSurname.Text = String.Empty;
-            ctrlCardNumber.Text = String.Empty;
-        }
-
-        private void gridViewCustomers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            ctrlName.Text = Convert.ToString(gridViewCustomers.GetFocusedRowCellValue("Name"));
-            ctrlSurname.Text = Convert.ToString(gridViewCustomers.GetFocusedRowCellValue("Surname"));
-            ctrlCardNumber.Text = Convert.ToString(gridViewCustomers.GetFocusedRowCellValue("CardNumber"));
         }
     }
 }
