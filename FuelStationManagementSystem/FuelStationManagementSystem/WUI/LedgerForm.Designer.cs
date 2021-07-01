@@ -78,7 +78,7 @@ namespace FuelStationManagementSystem.WUI {
             this.labelControl2.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl2.Appearance.Options.UseFont = true;
             this.labelControl2.Appearance.Options.UseForeColor = true;
-            this.labelControl2.Location = new System.Drawing.Point(306, 57);
+            this.labelControl2.Location = new System.Drawing.Point(272, 57);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(168, 33);
             this.labelControl2.TabIndex = 1;
@@ -90,7 +90,7 @@ namespace FuelStationManagementSystem.WUI {
             this.labelControl1.Appearance.ForeColor = System.Drawing.Color.White;
             this.labelControl1.Appearance.Options.UseFont = true;
             this.labelControl1.Appearance.Options.UseForeColor = true;
-            this.labelControl1.Location = new System.Drawing.Point(172, 12);
+            this.labelControl1.Location = new System.Drawing.Point(96, 12);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(557, 39);
             this.labelControl1.TabIndex = 0;
