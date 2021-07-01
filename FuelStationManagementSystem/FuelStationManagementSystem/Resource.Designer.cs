@@ -162,6 +162,16 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO Employee (ID, [Name], Surname, DateStart, Salary) 
+        ///VALUES (NEWID(), &apos;{0}&apos;, &apos;{1}&apos;, &apos;{2}&apos;, &apos;{3}&apos;).
+        /// </summary>
+        internal static string QLedgerPay {
+            get {
+                return ResourceManager.GetString("QLedgerPay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT * FROM Customer.
         /// </summary>
         internal static string QPopulateCustomer {

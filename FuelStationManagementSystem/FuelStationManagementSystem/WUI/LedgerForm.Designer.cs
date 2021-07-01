@@ -43,7 +43,7 @@ namespace FuelStationManagementSystem.WUI {
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl2 = new DevExpress.XtraEditors.SeparatorControl();
             this.ctrlExpenses = new DevExpress.XtraEditors.TextEdit();
-            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.lblTotal = new DevExpress.XtraEditors.LabelControl();
             this.separatorControl3 = new DevExpress.XtraEditors.SeparatorControl();
             this.ctrlTotal = new DevExpress.XtraEditors.TextEdit();
             this.panel1.SuspendLayout();
@@ -279,18 +279,18 @@ namespace FuelStationManagementSystem.WUI {
             this.ctrlExpenses.Size = new System.Drawing.Size(337, 26);
             this.ctrlExpenses.TabIndex = 95;
             // 
-            // labelControl6
+            // lblTotal
             // 
-            this.labelControl6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelControl6.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.labelControl6.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Appearance.Options.UseForeColor = true;
-            this.labelControl6.Location = new System.Drawing.Point(232, 312);
-            this.labelControl6.Name = "labelControl6";
-            this.labelControl6.Size = new System.Drawing.Size(92, 21);
-            this.labelControl6.TabIndex = 100;
-            this.labelControl6.Text = "Total Value:";
+            this.lblTotal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lblTotal.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
+            this.lblTotal.Appearance.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.lblTotal.Appearance.Options.UseFont = true;
+            this.lblTotal.Appearance.Options.UseForeColor = true;
+            this.lblTotal.Location = new System.Drawing.Point(232, 312);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(43, 21);
+            this.lblTotal.TabIndex = 100;
+            this.lblTotal.Text = "Total:";
             // 
             // separatorControl3
             // 
@@ -327,7 +327,7 @@ namespace FuelStationManagementSystem.WUI {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 438);
-            this.Controls.Add(this.labelControl6);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.separatorControl3);
             this.Controls.Add(this.ctrlTotal);
             this.Controls.Add(this.labelControl3);
@@ -386,7 +386,7 @@ namespace FuelStationManagementSystem.WUI {
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.SeparatorControl separatorControl2;
         private DevExpress.XtraEditors.TextEdit ctrlExpenses;
-        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl lblTotal;
         private DevExpress.XtraEditors.SeparatorControl separatorControl3;
         private DevExpress.XtraEditors.TextEdit ctrlTotal;
     }
