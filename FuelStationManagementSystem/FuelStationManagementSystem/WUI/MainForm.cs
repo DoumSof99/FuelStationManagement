@@ -29,6 +29,23 @@ namespace FuelStationManagementSystem {
         private void addToolStripMenuItem2_Click(object sender, EventArgs e) {
             AddItems();
         }
+
+        private void addToolStripMenuItem1_Click(object sender, EventArgs e) {
+            AddEmployee();
+        }
+
+        private void addToolStripMenuItem3_Click(object sender, EventArgs e) {
+            ChooseCustomer();
+        }
+
+        private void viewToolStripMenuItem3_Click(object sender, EventArgs e) {
+            ViewTransaction();
+        }
+
+        private void viewToolStripMenuItem4_Click(object sender, EventArgs e) {
+            ViewLedger();
+        }
+
         #endregion
 
         #region methods
@@ -47,41 +64,34 @@ namespace FuelStationManagementSystem {
             itemForm.ShowDialog();
         }
 
-        #endregion
-
-        private void addToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            AddEmployee();
-        }
-
-        private void AddEmployee()
-        {
+        private void AddEmployee() {
             EmployeeForm employeeForm = new EmployeeForm();
             _SqlConnection = new SqlConnection(ConnectionString);
             employeeForm.Con = _SqlConnection;
             employeeForm.ShowDialog();
         }
 
-        private void addToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
+        private void ChooseCustomer() {
             ChooseCustomerForm chooseCustomerForm = new ChooseCustomerForm();
             _SqlConnection = new SqlConnection(ConnectionString);
             chooseCustomerForm.Con = _SqlConnection;
             chooseCustomerForm.ShowDialog();
         }
 
-        private void viewToolStripMenuItem3_Click(object sender, EventArgs e) {
+        private void ViewTransaction() {
             ViewTransactionForm viewTransaction = new ViewTransactionForm();
             _SqlConnection = new SqlConnection(ConnectionString);
             viewTransaction.Con = _SqlConnection;
             viewTransaction.ShowDialog();
         }
 
-        private void viewToolStripMenuItem4_Click(object sender, EventArgs e) {
+        private void ViewLedger() {
             LedgerForm ledgerForm = new LedgerForm();
             _SqlConnection = new SqlConnection(ConnectionString);
             ledgerForm.Con = _SqlConnection;
             ledgerForm.ShowDialog();
         }
+             
+        #endregion
     }
 }
