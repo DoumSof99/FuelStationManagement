@@ -24,26 +24,121 @@ namespace FuelStationManagementSystem.WUI
             InitializeComponent();
         }
 
+        #region Events
         private void EmployeeForm_Load(object sender, EventArgs e)
         {
             Populate();
-            ResetFields();
+            Controller.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddEmployee();
             Populate();
+            Controller.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
             EditCustomer();
+            Controller.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DeleteCustomer();
+            Controller.ResetFields(ctrlName, ctrlSurname, ctrlSalary);
+        }
+
+        #endregion
+
+        #region Methods
+        private void AddEmployee()
+        {
+                              
+            string emplName = Convert.ToString(ctrlName.EditValue);
+            string emplSurname = Convert.ToString(ctrlSurname.EditValue);
+            string emplSalary = Convert.ToString(ctrlSalary.EditValue);
+            decimal salary;
+
+            if (!string.IsNullOrWhiteSpace(emplName) && !string.IsNullOrWhiteSpace(emplSurname) && decimal.TryParse(emplSalary, out salary))
+            {
+                Employee newEmployee = new Employee(emplName, emplSurname, salary);
+                string myquery = "INSERT INTO Employee (ID, Name, Surname, DateStart, Salary) VALUES (NEWID(), '" + newEmployee.Name + "', '" + newEmployee.Surname + "', '" + newEmployee.GetStartDate() + "', '" + newEmployee.Salary + "'";
+                int rowsAffected = DatabaseProcedure(myquery);
+                if (rowsAffected == 0)
+                {
+                    MessageBox.Show("Employee was not Added");
+                }
+                else
+                {
+                    MessageBox.Show("Employee Succesfully Added");
+                }      
+            }
+            else
+            {
+                MessageBox.Show("Please fill the correct values");
+            }
+        }
+
+        private void DeleteCustomer()
+        {
+            try
+            {
+                Guid id = Guid.Parse(Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("ID")));
+                string myquery = "UPDATE Employee SET DateEnd='" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE Id='" + id + "'";
+                int rowsAffected = DatabaseProcedure(myquery);
+
+                if (rowsAffected == 0)
+                {
+                    MessageBox.Show("Employee was not Dismissed!");
+                }
+                else
+                {
+                    MessageBox.Show("Employee Successfully Dismissed");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void EditCustomer()
+        {
+            try
+            {
+                Guid id = Guid.Parse(Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("ID")));
+                string myquery = "UPDATE Employee SET Name='" + ctrlName.Text + "',Surname='" + ctrlSurname.Text + "',Salary='" + ctrlSalary.Text + "' WHERE ID='" + id + "'";
+                int rowsAffected = DatabaseProcedure(myquery);
+
+                if (rowsAffected == 0)
+                {
+                    MessageBox.Show("Employee was not Updated!");
+                }
+                else
+                {
+                    MessageBox.Show("Employee Successfully Updated");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        //private void ResetFields()
+        //{
+        //    ctrlName.Text = String.Empty;
+        //    ctrlSurname.Text = String.Empty;
+        //    ctrlSalary.Text = String.Empty;
+        //}
+
+        private void gridViewCustomers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
+        {
+            ctrlName.Text = Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("Name"));
+            ctrlSurname.Text = Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("Surname"));
+            ctrlSalary.Text = Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("Salary"));
         }
 
         private void Populate()
@@ -51,7 +146,7 @@ namespace FuelStationManagementSystem.WUI
             try
             {
                 Con.Open();
-                string MyQuery = "SELECT ID, Name, Surname, DateStart, DateEnd, Salary FROM Employee";
+                string MyQuery = "SELECT * FROM Employee";
                 SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 var ds = new DataSet();
@@ -66,91 +161,25 @@ namespace FuelStationManagementSystem.WUI
             }
         }
 
-        private void AddEmployee()
-        {
-            //if (!string.IsNullOrWhiteSpace(ctrlName.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlSurname.Text.ToString()) || !string.IsNullOrWhiteSpace(ctrlCardNumber.Text)){                    
-            string emplName = Convert.ToString(ctrlName.Text);
-            string emplSurname = Convert.ToString(ctrlSurname.Text);
-            decimal emplSalary = Convert.ToDecimal(ctrlSalary.Text);
-
-
-            Employee newEmployee = new Employee(emplName, emplSurname, emplSalary);
-
-            try
-            {
-                Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO Employee (ID, Name, Surname, DateStart, Salary) VALUES (NEWID(), '" + newEmployee.Name + "', '" + newEmployee.Surname + "', '" + newEmployee.GetStartDate() + "', '" + newEmployee.Salary + "')", Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Employee Succesfully Added");
-                Con.Close();
-                Populate();
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-            }
-            //}
-            //else {
-            //    MessageBox.Show("Please add all the values correctly");
-            //}
-        }
-
-        private void DeleteCustomer()
-        {
-            if (ctrlName.Text == String.Empty)
-            {
-                MessageBox.Show("Select an employee");
-            }
-            else
-            {             
-                Guid id = Guid.Parse(Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("ID")));
-                
-                Con.Open();
-                //string myquery = "DELETE FROM Employee WHERE Id='" + id + "'";
-                string myquery = "UPDATE Employee SET DateEnd='" + DateTime.Now.ToString("yyyy-MM-dd") + "' WHERE Id='" + id + "'";
-                SqlCommand cmd = new SqlCommand(myquery, Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Customer Successfully Dismissed");
-                Con.Close();
-                Populate();
-                ResetFields();
-            }
-        }
-
-        private void EditCustomer()
+        private int DatabaseProcedure(string myquery)
         {
             try
             {
-                Guid id = Guid.Parse(Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("ID")));
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Employee SET Name='" + ctrlName.Text + "',Surname='" + ctrlSurname.Text + "',Salary='" + ctrlSalary.Text + "' WHERE ID='" + id + "'", Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Employee Successfully Updated");
+                SqlCommand cmd = new SqlCommand(myquery);
+                int rowsAffected = cmd.ExecuteNonQuery();
                 Con.Close();
                 Populate();
-                ResetFields();
+                return rowsAffected;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                Con.Close();
+                return 0;
             }
         }
 
-        private void ResetFields()
-        {
-            ctrlName.Text = String.Empty;
-            ctrlSurname.Text = String.Empty;
-            ctrlSalary.Text = String.Empty;
-        }
-
-        private void gridViewCustomers_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e)
-        {
-            ctrlName.Text = Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("Name"));
-            ctrlSurname.Text = Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("Surname"));
-            ctrlSalary.Text = Convert.ToString(gridViewEmployees.GetFocusedRowCellValue("Salary"));
-        }
-
-        
+        #endregion
     }
 }
