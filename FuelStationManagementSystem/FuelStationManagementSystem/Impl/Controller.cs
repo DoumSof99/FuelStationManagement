@@ -10,11 +10,8 @@ using System.Windows.Forms;
 namespace FuelStationManagementSystem.Impl {
     public class Controller {
 
-        
-
         public static void PopulateController(SqlConnection con, string query, DevExpress.XtraGrid.GridControl grid) {
             
-
             try {
                 con.Open();
                 SqlDataAdapter da = new SqlDataAdapter(query, con);
@@ -28,7 +25,29 @@ namespace FuelStationManagementSystem.Impl {
 
                 MessageBox.Show(ex.Message);
             }
+        }
 
+        //
+        public static int DatabaseProcedure(SqlConnection con, string query, DevExpress.XtraGrid.GridControl grid) {
+            try {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query, con);
+                int rowsAffected = cmd.ExecuteNonQuery();
+                con.Close();
+                Controller.PopulateController(con, Resource.QPopulateCustomer, grid);
+                return rowsAffected;
+            }
+            catch (Exception ex) {
+                con.Close();
+                return 0;
+            }
+        }
+
+        //RESET FIELDS
+        public static void ResetFields(DevExpress.XtraEditors.TextEdit value1, DevExpress.XtraEditors.TextEdit value2, DevExpress.XtraEditors.TextEdit value3) {
+            value1.EditValue = String.Empty;
+            value2.EditValue = String.Empty;
+            value3.EditValue = String.Empty;
         }
 
     }
