@@ -22,38 +22,24 @@ namespace FuelStationManagementSystem.WUI {
         }
 
         private void ItemForm_Load(object sender, EventArgs e) {
-            Populate();
-            ResetFields();
+            Utility.PopulateUtility(Con, Resource.QPopulateItem, gridItems);
+            Utility.ResetFields(ctrlCode, ctrlDescription, ctrlItemType, ctrlPrice, ctrlCost);
         }
 
         private void btnAdd_Click(object sender, EventArgs e) {
             AddItem();
+            Utility.PopulateUtility(Con, Resource.QPopulateItem, gridItems);
         }
         private void btnEdit_Click(object sender, EventArgs e) {
             EditItem();
+            Utility.PopulateUtility(Con, Resource.QPopulateItem, gridItems);
+            Utility.ResetFields(ctrlCode, ctrlDescription, ctrlItemType, ctrlPrice, ctrlCost);
         }
 
         private void btnDelete_Click(object sender, EventArgs e) {
             DeleteItem();
-        }
-
-        private void Populate() {
-            Con.Open();
-            string MyQuery = String.Format(Resource.QPopulateItem);
-            SqlDataAdapter da = new SqlDataAdapter(MyQuery, Con);
-            SqlCommandBuilder builder = new SqlCommandBuilder(da);
-            var ds = new DataSet();
-            da.Fill(ds);
-            gridItems.DataSource = ds.Tables[0];
-            Con.Close();
-        }
-
-        private void ResetFields() {
-            ctrlCode.Text = String.Empty;
-            ctrlDescription.Text = String.Empty;
-            ctrlItemType.Text = String.Empty;
-            ctrlPrice.Text = String.Empty;
-            ctrlCost.Text = String.Empty;
+            Utility.PopulateUtility(Con, Resource.QPopulateItem, gridItems);
+            Utility.ResetFields(ctrlCode, ctrlDescription, ctrlItemType, ctrlPrice, ctrlCost);
         }
 
         private void AddItem() {
@@ -72,7 +58,7 @@ namespace FuelStationManagementSystem.WUI {
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Items Succesfully Added");
                 Con.Close();
-                Populate();
+               
             }
             catch (Exception ex) {
 
@@ -85,12 +71,12 @@ namespace FuelStationManagementSystem.WUI {
             try {
                 Guid id = Guid.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("ID")));
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("UPDATE Items SET Code ='" + ctrlCode.Text + "', Description='" + ctrlDescription.Text + "', ItemType ='" + ctrlItemType.SelectedItem.ToString() + "', Price = '" + ctrlPrice.Text + "', Cost = '" + ctrlCost.Text + "' WHERE ID ='" + id + "'", Con);
+                string MyQuery = String.Format(Resource.QEditItems, ctrlCode.Text, ctrlDescription.Text, ctrlItemType.SelectedItem.ToString(), ctrlPrice.Text, ctrlCost.Text, id);
+                SqlCommand cmd = new SqlCommand(MyQuery, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Customer Successfully Updated");
                 Con.Close();
-                Populate();
-                ResetFields();
+                
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
@@ -114,13 +100,12 @@ namespace FuelStationManagementSystem.WUI {
                 Guid id = Guid.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("ID")));
 
                 Con.Open();
-                string myquery = "DELETE FROM Items WHERE ID='" + id + "'";
+                string myquery = String.Format(Resource.QDeleteItems, id);
                 SqlCommand cmd = new SqlCommand(myquery, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Item Successfully Deleted");
                 Con.Close();
-                Populate();
-                ResetFields();
+                
             }
         }
         

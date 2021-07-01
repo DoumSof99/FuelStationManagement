@@ -1,0 +1,1 @@
+﻿DELETE FROM Items WHERE ID = '{0}'

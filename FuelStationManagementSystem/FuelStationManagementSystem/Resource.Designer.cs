@@ -129,6 +129,15 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to DELETE FROM Items WHERE ID = &apos;{0}&apos;.
+        /// </summary>
+        internal static string QDeleteItems {
+            get {
+                return ResourceManager.GetString("QDeleteItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to UPDATE Employee 
         ///SET DateEnd= &apos;{0}&apos;
         ///WHERE ID = &apos;{1}&apos;.
@@ -162,8 +171,41 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to INSERT INTO Employee (ID, [Name], Surname, DateStart, Salary) 
-        ///VALUES (NEWID(), &apos;{0}&apos;, &apos;{1}&apos;, &apos;{2}&apos;, &apos;{3}&apos;).
+        ///   Looks up a localized string similar to UPDATE Items SET Code = &apos;{0}&apos;, [Description] = &apos;{1}&apos;, ItemType =&apos;{2}&apos;, Price = {3}, Cost = {4}
+        /// WHERE ID = &apos;{5}&apos;.
+        /// </summary>
+        internal static string QEditItems {
+            get {
+                return ResourceManager.GetString("QEditItems", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT CardNumber FROM Customer.
+        /// </summary>
+        internal static string QFillCustomerCard {
+            get {
+                return ResourceManager.GetString("QFillCustomerCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM  Customer WHERE CardNumber =  &apos;{0}&apos;.
+        /// </summary>
+        internal static string QFindCustomer {
+            get {
+                return ResourceManager.GetString("QFindCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT Sum(Pay) FROM
+        ///(SELECT *,
+        ///CASE WHEN DateStart &lt; &apos;{0}&apos; AND(DateEnd &gt; &apos;{1}&apos; OR DateEnd IS NULL) THEN (Salary / 25) * DATEDIFF(day, &apos;{0}&apos;, &apos;{1}&apos;)
+        ///WHEN DateStart &gt;= &apos;{0}&apos; AND(DateEnd &gt; &apos;{1}&apos; OR DateEnd IS NULL) THEN(Salary / 25) * DATEDIFF(day, DateStart, &apos;{1}&apos;)
+        ///WHEN DateStart &lt; &apos;{0}&apos; AND DateEnd &lt;= &apos;{1}&apos; THEN(Salary / 25) * DATEDIFF(day, &apos;{0}&apos;, DateEnd)
+        ///WHEN DateStart &gt;= &apos;{0}&apos; AND DateEnd &lt;= &apos;{1}&apos; THEN(Salary / 25) * DATEDIFF(day, DateStart, DateEnd)
+        ///END AS Pay FROM(SELECT * FROM Employee WHERE Dat [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string QLedgerPay {
             get {
@@ -208,11 +250,51 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM TransactionLine WHERE TransactionID = &apos;{0}&apos;.
+        /// </summary>
+        internal static string QPopulateViewTransactionLine {
+            get {
+                return ResourceManager.GetString("QPopulateViewTransactionLine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SELECT * FROM Items WHERE ItemType= &apos;{0}&apos;.
         /// </summary>
         internal static string QTransactionFilterByItem {
             get {
                 return ResourceManager.GetString("QTransactionFilterByItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT SUM(TotalCost) AS &apos;ExpensesCost&apos; 
+        ///FROM [Transaction] 
+        ///WHERE [Date] BETWEEN &apos;{0}&apos; AND &apos;{1}&apos;.
+        /// </summary>
+        internal static string QueryCost {
+            get {
+                return ResourceManager.GetString("QueryCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT SUM(DiscountValue) AS &apos;Income&apos; 
+        ///FROM [Transaction] 
+        ///WHERE [Date] BETWEEN &apos;{0}&apos; AND &apos;{1}&apos;.
+        /// </summary>
+        internal static string QueryIncome {
+            get {
+                return ResourceManager.GetString("QueryIncome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM  [Transaction].
+        /// </summary>
+        internal static string QViewTransaction {
+            get {
+                return ResourceManager.GetString("QViewTransaction", resourceCulture);
             }
         }
     }

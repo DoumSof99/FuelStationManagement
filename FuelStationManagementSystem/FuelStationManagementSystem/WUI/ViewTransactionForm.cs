@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using DevExpress.Utils;
+using FuelStationManagementSystem.Impl;
 
 namespace FuelStationManagementSystem.WUI {
     public partial class ViewTransactionForm : Form {
@@ -21,25 +22,7 @@ namespace FuelStationManagementSystem.WUI {
         }
 
         private void ViewTransactionForm_Load(object sender, EventArgs e) {
-           
-            Populate();
-        }
-
-        private void Populate() {
-            try {
-                Con.Open();
-                string Myquery = "SELECT * FROM  [Transaction]";
-                SqlDataAdapter da = new SqlDataAdapter(Myquery, Con);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                gridTransaction.DataSource = ds.Tables[0];
-                Con.Close();
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-                Con.Close();
-            }
+            Utility.PopulateUtility(Con, Resource.QViewTransaction, gridTransaction);
         }
 
         private void gridViewTransaction_FocusedRowChanged(object sender, DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventArgs e) {

@@ -21,31 +21,8 @@ namespace FuelStationManagementSystem.WUI {
         }
 
         private void ViewTransactionLineForm_Load(object sender, EventArgs e) {
-            PopulateTransactionLine();
-        }
-
-        private void PopulateTransactionLine() {
-            try {
-
-                string transactionId = Convert.ToString(ID);
-                          
-                Con.Open();
-                string Myquery = "SELECT * FROM TransactionLine WHERE TransactionID = '" + transactionId + "'";
-                SqlDataAdapter da = new SqlDataAdapter(Myquery, Con);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                gridTransactionLine.DataSource = ds.Tables[0];
-                Con.Close();
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-                Con.Close();
-            }
-        }
-
-        private void gridTransactionLine_FocusedViewChanged(object sender, DevExpress.XtraGrid.ViewFocusEventArgs e) {
-
+            string Myquery = String.Format(Resource.QPopulateViewTransactionLine, Convert.ToString(ID));
+            Utility.PopulateUtility(Con, Myquery, gridTransactionLine);
         }
     }
 }

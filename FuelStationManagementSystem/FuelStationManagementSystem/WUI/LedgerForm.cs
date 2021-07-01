@@ -37,10 +37,10 @@ namespace FuelStationManagementSystem.WUI {
 
             try
             {            
-                string queryIncome = "SELECT SUM(DiscountValue) AS 'Income' FROM [Transaction] WHERE [Date] BETWEEN '" + dateFrom.ToString("yyyy-MM-dd") + "' AND '" + dateTo.ToString("yyyy-MM-dd") + "'";
+                string queryIncome = String.Format(Resource.QueryIncome, dateFrom.ToString("yyyy-MM-dd"), dateTo.ToString("yyyy-MM-dd"));
                 decimal income = GetFromDatabase(queryIncome);
 
-                string queryCost = "SELECT SUM(TotalCost) AS 'ExpensesCost' FROM [Transaction] WHERE [Date] BETWEEN '" + dateFrom.ToString("yyyy-MM-dd") + "' AND '" + dateTo.ToString("yyyy-MM-dd") + "'";
+                string queryCost = String.Format(Resource.QueryCost, dateFrom.ToString("yyyy-MM-dd"), dateTo.ToString("yyyy-MM-dd"));
                 decimal itemsCost = GetFromDatabase(queryCost);
 
                 string queryPay = String.Format(Resource.QLedgerPay, dateFrom.ToString("yyyy-MM-dd"), dateTo.ToString("yyyy-MM-dd"));

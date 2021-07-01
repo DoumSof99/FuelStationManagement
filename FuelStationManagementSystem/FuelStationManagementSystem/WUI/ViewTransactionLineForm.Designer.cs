@@ -110,7 +110,6 @@ namespace FuelStationManagementSystem.WUI {
             this.gridTransactionLine.TabIndex = 94;
             this.gridTransactionLine.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewTransactionLine});
-            this.gridTransactionLine.FocusedViewChanged += new DevExpress.XtraGrid.ViewFocusEventHandler(this.gridTransactionLine_FocusedViewChanged);
             // 
             // transactionLineBindingSource
             // 

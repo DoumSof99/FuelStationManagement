@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FuelStationManagementSystem.Impl;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,7 +29,15 @@ namespace FuelStationManagementSystem.WUI
 
         private void ctrlCardNumber_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            FindCustomer();
+            try {
+                string Myquery = String.Format(Resource.QFindCustomer, Convert.ToString(ctrlCardNumber.SelectedValue));
+                Utility.PopulateUtility(Con, Myquery, gridCustomers);
+                CustomerId = Guid.Parse(Convert.ToString(gridViewCustomers.GetFocusedRowCellValue("ID")));
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+                Con.Close();
+            }
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -39,7 +48,7 @@ namespace FuelStationManagementSystem.WUI
         private void FillCustomerCard()
         {
 
-            string query = "SELECT CardNumber FROM Customer";
+            string query = Resource.QFillCustomerCard;
             SqlCommand cmd = new SqlCommand(query, Con);
             SqlDataReader rdr;
             try
@@ -53,28 +62,6 @@ namespace FuelStationManagementSystem.WUI
                 ctrlCardNumber.DataSource = dt;
                 ctrlCardNumber.SelectedIndex = -1;
                 Con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Con.Close();
-            }
-        }
-
-        private void FindCustomer()
-        {
-            try
-            {
-                Con.Open();
-                string Myquery = "SELECT * FROM  Customer WHERE CardNumber = '" + Convert.ToString(ctrlCardNumber.SelectedValue) + "'";
-                SqlDataAdapter da = new SqlDataAdapter(Myquery, Con);
-                SqlCommandBuilder builder = new SqlCommandBuilder(da);
-                var ds = new DataSet();
-                da.Fill(ds);
-                gridCustomers.DataSource = ds.Tables[0];
-                Con.Close();
-
-                CustomerId = Guid.Parse(Convert.ToString(gridViewCustomers.GetFocusedRowCellValue("ID")));               
             }
             catch (Exception ex)
             {

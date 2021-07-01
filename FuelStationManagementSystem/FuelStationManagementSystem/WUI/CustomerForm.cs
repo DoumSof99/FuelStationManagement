@@ -65,7 +65,6 @@ namespace FuelStationManagementSystem.WUI {
                 MessageBox.Show("Invalid credit card number!");
             }
             else {
-                //string myquery = "INSERT INTO Customer (ID, Name, Surname, CardNumber) VALUES ('" + newCustomer.ID + "', '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')";
                 string myquery = String.Format(Resource.QAddCustomer, newCustomer.Name, newCustomer.Surname, newCustomer.CardNumber, newCustomer.ID);
                 Utility.DatabaseProcedure(Con, myquery, gridCustomers);
                 MessageBox.Show("Customer Succesfully Added");

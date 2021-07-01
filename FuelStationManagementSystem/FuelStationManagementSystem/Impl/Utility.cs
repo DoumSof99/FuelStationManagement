@@ -52,5 +52,13 @@ namespace FuelStationManagementSystem.Impl {
             value3.EditValue = String.Empty;
         }
 
+        public static void ResetFields(DevExpress.XtraEditors.TextEdit value1, DevExpress.XtraEditors.TextEdit value2, DevExpress.XtraEditors.TextEdit value3, DevExpress.XtraEditors.TextEdit value4, DevExpress.XtraEditors.TextEdit value5) {
+            value1.EditValue = String.Empty;
+            value2.EditValue = String.Empty;
+            value3.EditValue = String.Empty;
+            value4.EditValue = String.Empty;
+            value5.EditValue = String.Empty;
+        }
+
     }
 }

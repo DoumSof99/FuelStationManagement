@@ -139,6 +139,9 @@
   <data name="QDeleteEmployee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qdeleteemployee.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="QDeleteItems" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qdeleteitems.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="QDismissEmployee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qdismissemployee.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -147,6 +150,15 @@
   </data>
   <data name="QEditEmployee" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qeditemployee.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QEditItems" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qedititems.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QFillCustomerCard" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qfillcustomercard.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QFindCustomer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qfindcustomer.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
   <data name="QLedgerPay" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qledgerpay.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
@@ -163,7 +175,19 @@
   <data name="QPopulateTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qpopulatetransaction.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="QPopulateViewTransactionLine" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qpopulateviewtransactionline.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="QTransactionFilterByItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qtransactionfilterbyitem.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QueryCost" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\querycost.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QueryIncome" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\queryincome.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QViewTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qviewtransaction.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>

@@ -15,8 +15,6 @@ namespace FuelStationManagementSystem.WUI
     public partial class EmployeeForm : Form
     {
 
-        //SqlConnection Con = new SqlConnection(@"Data Source=DESKTOP-O3H1CKS\SQLCS412_SOFIA;Initial Catalog=FuelStationManagement;Integrated Security=True");
-
         public SqlConnection Con { get; set; }
 
         public EmployeeForm()
