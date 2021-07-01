@@ -1,1 +1,1 @@
-﻿SELECT * FROM Customer
+﻿SELECT [Name], Surname, CardNumber FROM Customer

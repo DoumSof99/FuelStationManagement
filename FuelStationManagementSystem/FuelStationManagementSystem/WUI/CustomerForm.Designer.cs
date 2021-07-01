@@ -276,6 +276,8 @@ namespace FuelStationManagementSystem.WUI
             // 
             this.colID.FieldName = "ID";
             this.colID.Name = "colID";
+            this.colID.Visible = true;
+            this.colID.VisibleIndex = 3;
             // 
             // colName
             // 

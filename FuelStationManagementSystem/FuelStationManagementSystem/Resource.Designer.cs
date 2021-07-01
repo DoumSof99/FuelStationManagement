@@ -61,16 +61,37 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to DELETE FROM Customer WHERE CardNumber =.
+        ///   Looks up a localized string similar to INSERT INTO Customer (ID, [Name], Surname, CardNumber) 
+        ///VALUES (NEWID(), &apos;{0}&apos;, &apos;{1}&apos;, &apos;{2}&apos;).
         /// </summary>
-        internal static string QDeleteCusomer {
+        internal static string QAddCustomer {
             get {
-                return ResourceManager.GetString("QDeleteCusomer", resourceCulture);
+                return ResourceManager.GetString("QAddCustomer", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT Name, Surname, CardNumber FROM Customer.
+        ///   Looks up a localized string similar to DELETE FROM Customer WHERE CardNumber = &apos;{0}&apos;.
+        /// </summary>
+        internal static string QDeleteCustomer {
+            get {
+                return ResourceManager.GetString("QDeleteCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to UPDATE Customer 
+        ///SET [Name]= &apos;{0}&apos; ,Surname = &apos;{1}&apos; 
+        ///WHERE CardNumber = &apos;{2}&apos;.
+        /// </summary>
+        internal static string QEditCustomer {
+            get {
+                return ResourceManager.GetString("QEditCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT [Name], Surname, CardNumber FROM Customer.
         /// </summary>
         internal static string QPopulateCustomer {
             get {

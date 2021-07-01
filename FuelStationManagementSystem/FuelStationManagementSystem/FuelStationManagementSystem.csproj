@@ -264,7 +264,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Queries\QDeleteCusomer.sql" />
+    <Content Include="Queries\QEditCustomer.sql" />
+    <Content Include="Queries\QAddCustomer.sql" />
+    <Content Include="Queries\QDeleteCustomer.sql" />
     <Content Include="Queries\QPopulateCustomer.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
