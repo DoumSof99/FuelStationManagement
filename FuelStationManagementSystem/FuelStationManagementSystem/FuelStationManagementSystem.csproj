@@ -264,6 +264,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Queries\QLedgerPay.sql" />
     <Content Include="Queries\QAddEmployee.sql" />
     <Content Include="Queries\QAddTransactionLines.sql" />
     <Content Include="Queries\QAddTransaction.sql" />

@@ -36,35 +36,21 @@ namespace FuelStationManagementSystem.WUI {
             decimal totalRent = (dateTo - dateFrom).Days * rent / 30;
 
             try
-            {
-                Con.Open();
+            {            
                 string queryIncome = "SELECT SUM(DiscountValue) AS 'Income' FROM [Transaction] WHERE [Date] BETWEEN '" + dateFrom.ToString("yyyy-MM-dd") + "' AND '" + dateTo.ToString("yyyy-MM-dd") + "'";
-                SqlCommand cmdIncome = new SqlCommand(queryIncome, Con);
-                string income = Convert.ToString(cmdIncome.ExecuteScalar());
+                decimal income = GetFromDatabase(queryIncome);
 
+                string queryCost = "SELECT SUM(TotalCost) AS 'ExpensesCost' FROM [Transaction] WHERE [Date] BETWEEN '" + dateFrom.ToString("yyyy-MM-dd") + "' AND '" + dateTo.ToString("yyyy-MM-dd") + "'";
+                decimal itemsCost = GetFromDatabase(queryCost);
 
-                string queryExpensesCost = "SELECT SUM(TotalCost) AS 'ExpensesCost' FROM [Transaction] WHERE [Date] BETWEEN '" + dateFrom.ToString("yyyy-MM-dd") + "' AND '" + dateTo.ToString("yyyy-MM-dd") + "'";
-                SqlCommand cmdExpensesCost = new SqlCommand(queryExpensesCost, Con);
-                string itemsCost = Convert.ToString(cmdExpensesCost.ExecuteScalar());
+                string queryPay = String.Format(Resource.QLedgerPay, dateFrom.ToString("yyyy-MM-dd"), dateTo.ToString("yyyy-MM-dd"));
+                decimal employeesPay = GetFromDatabase(queryPay);
 
-
-                //string queryExpensesCost = "SELECT SUM(TotalCost) AS 'ExpensesCost' FROM [Transaction] WHERE [Date] BETWEEN '" + dateFrom + "' AND '" + dateTo + "'";
-                //SqlCommand cmd = new SqlCommand(queryExpensesCost, Con);
-                //string expensesCost = cmd.ExecuteScalar().ToString();
-
-                string queryEmployeess = $@"SELECT Sum(Pay) FROM( SELECT *,
-                CASE WHEN DateStart < {dateFrom.ToString("yyyy-MM-dd")} AND(DateEnd > {dateTo.ToString("yyyy-MM-dd")} OR DateEnd IS NULL) THEN(Salary / 25) * DATEDIFF(day, {dateFrom.ToString("yyyy-MM-dd")}, {dateTo.ToString("yyyy-MM-dd")})
-                WHEN DateStart >= {dateFrom.ToString("yyyy-MM-dd")} AND(DateEnd > {dateTo.ToString("yyyy-MM-dd")} OR DateEnd IS NULL) THEN(Salary / 25) * DATEDIFF(day, DateStart, {dateTo.ToString("yyyy-MM-dd")})
-                WHEN DateStart < {dateFrom.ToString("yyyy-MM-dd")} AND DateEnd <= {dateTo.ToString("yyyy-MM-dd")} THEN(Salary / 25) * DATEDIFF(day, {dateFrom.ToString("yyyy-MM-dd")}, DateEnd)
-                WHEN DateStart >= {dateFrom.ToString("yyyy-MM-dd")} AND DateEnd <= {dateTo.ToString("yyyy-MM-dd")} THEN(Salary / 25) * DATEDIFF(day, DateStart, DateEnd)
-                END AS Pay FROM(SELECT * FROM Employee WHERE DateStart <= {dateTo.ToString("yyyy-MM-dd")} AND DateEnd >= {dateFrom.ToString("yyyy-MM-dd")}) As Employees) As Pay";
-                SqlCommand cmdEmployees = new SqlCommand(queryEmployeess, Con);
-                string employeesPay = Convert.ToString(cmdExpensesCost.ExecuteScalar());
-
-                Con.Close();
-
+                decimal expenses = employeesPay + itemsCost + totalRent;
                 ctrlIncome.EditValue = income;
-                ctrlExpenses.EditValue = employeesPay + itemsCost + totalRent;
+                ctrlExpenses.EditValue = expenses;
+
+                CalculateTotal(income, expenses);
 
             }
             catch (Exception ex) {
@@ -73,6 +59,41 @@ namespace FuelStationManagementSystem.WUI {
             }
         }
 
+        private void CalculateTotal(decimal income, decimal expenses)
+        {
+            decimal total;
+            if (income > expenses)
+            {
+                total = income - expenses;
+                ctrlTotal.EditValue = Convert.ToString(total);
+                lblTotal.Text = "Total Profit:";
+            }
+            else
+            {
+                total = expenses - income;
+                ctrlTotal.Text = Convert.ToString(total);
+                lblTotal.Text = "Total Loss:";
+            }
+        }
+
+
+        private decimal GetFromDatabase(string myquery)
+        {
+            try
+            {
+                Con.Open();
+                SqlCommand cmd= new SqlCommand(myquery, Con);
+                string result = Convert.ToString(cmd.ExecuteScalar());          
+                Con.Close();
+                return Convert.ToDecimal(result);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                Con.Close();
+                return 0;
+            }
+        }
       
     }
 }
