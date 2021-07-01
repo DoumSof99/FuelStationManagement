@@ -64,7 +64,8 @@ namespace FuelStationManagementSystem.WUI {
                 MessageBox.Show("Invalid credit card number!");
             }
             else {
-                string myquery = "INSERT INTO Customer (ID, Name, Surname, CardNumber) VALUES ('" + newCustomer.ID + "', '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')";
+                //string myquery = "INSERT INTO Customer (ID, Name, Surname, CardNumber) VALUES ('" + newCustomer.ID + "', '" + newCustomer.Name + "', '" + newCustomer.Surname + "', '" + newCustomer.CardNumber + "')";
+                string myquery = String.Format(Resource.QAddCustomer, newCustomer.Name, newCustomer.Surname, newCustomer.CardNumber, newCustomer.ID);
                 Controller.DatabaseProcedure(Con, myquery, gridCustomers);
                 MessageBox.Show("Customer Succesfully Added");
             }
@@ -72,7 +73,7 @@ namespace FuelStationManagementSystem.WUI {
 
         private void DeleteCustomer(DevExpress.XtraEditors.TextEdit cardNumber) {
             string cardNum = Convert.ToString(cardNumber.EditValue);
-            string myquery = Resource.QDeleteCusomer + String.Format("'{0}'", cardNum);
+            string myquery = String.Format(Resource.QDeleteCustomer, cardNum);
             int rowsAffected = Controller.DatabaseProcedure(Con, myquery, gridCustomers);
 
             if (rowsAffected == 0) {
@@ -86,7 +87,7 @@ namespace FuelStationManagementSystem.WUI {
 
         private void EditCustomer() {
 
-            string myquery = "UPDATE Customer SET Name='" + ctrlName.EditValue + "',Surname='" + ctrlSurname.EditValue + "' WHERE CardNumber='" + ctrlCardNumber.EditValue + "'";
+            string myquery = String.Format(Resource.QEditCustomer, ctrlName.EditValue, ctrlSurname.EditValue, ctrlCardNumber.EditValue);  //"UPDATE Customer SET Name='" + ctrlName.EditValue + "',Surname='" + ctrlSurname.EditValue + "' WHERE CardNumber='" + ctrlCardNumber.EditValue + "'";
             int rowsAffected = Controller.DatabaseProcedure(Con, myquery, gridCustomers);
             if (rowsAffected == 0) {
                 MessageBox.Show("Customer was not Updated!");
