@@ -264,10 +264,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Queries\QAddTransactionLines.sql" />
+    <Content Include="Queries\QAddTransaction.sql" />
     <Content Include="Queries\QEditCustomer.sql" />
     <Content Include="Queries\QAddCustomer.sql" />
     <Content Include="Queries\QDeleteCustomer.sql" />
     <Content Include="Queries\QPopulateCustomer.sql" />
+    <Content Include="Queries\QPopulateTransaction.sql" />
+    <Content Include="Queries\QTransactionFilterByItem.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

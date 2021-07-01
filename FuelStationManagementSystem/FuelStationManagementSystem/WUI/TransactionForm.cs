@@ -65,7 +65,7 @@ namespace FuelStationManagementSystem.WUI
             try
             {
                 Con.Open();
-                string Myquery = "SELECT * FROM  Items";
+                string Myquery = String.Format(Resource.QPopulateTransaction);
                 SqlDataAdapter da = new SqlDataAdapter(Myquery, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 var ds = new DataSet();
@@ -85,7 +85,7 @@ namespace FuelStationManagementSystem.WUI
             try
             {
                 Con.Open();
-                string Myquery = "SELECT * FROM Items WHERE ItemType='" + ctrlItemType.SelectedItem.ToString() + "'";
+                string Myquery = String.Format(Resource.QTransactionFilterByItem, ctrlItemType.SelectedItem.ToString()); 
                 SqlDataAdapter da = new SqlDataAdapter(Myquery, Con);
                 SqlCommandBuilder builder = new SqlCommandBuilder(da);
                 var ds = new DataSet();
@@ -183,7 +183,8 @@ namespace FuelStationManagementSystem.WUI
 
             try {
                 Con.Open();
-                SqlCommand cmd = new SqlCommand("INSERT INTO [Transaction](ID, Date, CustomerID, DiscountValue, TotalValue, TotalCost) VALUES('" + newTransaction.ID + "', '" + newTransaction.GetDate() + "', '" + newTransaction.CustomerID + "','" + newTransaction.DiscountValue + "', '" + newTransaction.TotalValue + "', '" + newTransaction.TotalCost + "')", Con);
+                string MyQeury = String.Format(Resource.QAddTransaction, newTransaction.ID, newTransaction.GetDate(), newTransaction.CustomerID, newTransaction.DiscountValue, newTransaction.TotalValue, newTransaction.TotalCost);
+                SqlCommand cmd = new SqlCommand(MyQeury, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Transaction Succesfully Added");
                 Con.Close();
@@ -201,7 +202,8 @@ namespace FuelStationManagementSystem.WUI
                 item.TransactionID = Convert.ToString(newTransaction.ID);
                 try {
                     Con.Open();
-                    SqlCommand cmd = new SqlCommand("INSERT INTO TransactionLine (ID, TransactionID, ItemID, Quantity, ItemPrice, Value, ItemCost, Cost, ItemType) VALUES ('" + item.ID + "', '" + Convert.ToString(item.TransactionID) + "', '" + Convert.ToString(item.ItemID) + "', '" + item.Quantity + "', '" + item.ItemPrice + "', '" + item.Value + "', '" + item.ItemCost + "', '" + item.Cost + "', '" + item.ItemType + "')", Con);
+                    string MyQuery = String.Format(Resource.QAddTransactionLines, item.ID, Convert.ToString(item.TransactionID), Convert.ToString(item.ItemID), item.Quantity, item.ItemPrice, item.Value, item.ItemCost, item.Cost, item.ItemType);
+                    SqlCommand cmd = new SqlCommand(MyQuery, Con);
                     cmd.ExecuteNonQuery();
                     Con.Close();
                 }

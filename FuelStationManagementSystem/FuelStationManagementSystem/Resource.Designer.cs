@@ -71,6 +71,26 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO [Transaction](ID, Date, CustomerID, DiscountValue, TotalValue, TotalCost) 
+        ///VALUES(&apos;{0}&apos;, &apos;{1}&apos;, &apos;{2}&apos;, {3}, {4}, {5}).
+        /// </summary>
+        internal static string QAddTransaction {
+            get {
+                return ResourceManager.GetString("QAddTransaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to INSERT INTO TransactionLine (ID, TransactionID, ItemID, Quantity, ItemPrice, [Value], ItemCost, Cost, ItemType) 
+        ///VALUES (&apos;{0}&apos;, &apos;{1}&apos;, &apos;{2}&apos;, {3}, {4}, {5}, {6}, {7}, &apos;{8}&apos;).
+        /// </summary>
+        internal static string QAddTransactionLines {
+            get {
+                return ResourceManager.GetString("QAddTransactionLines", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to DELETE FROM Customer WHERE CardNumber = &apos;{0}&apos;.
         /// </summary>
         internal static string QDeleteCustomer {
@@ -91,11 +111,29 @@ namespace FuelStationManagementSystem {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to SELECT [Name], Surname, CardNumber FROM Customer.
+        ///   Looks up a localized string similar to SELECT * FROM Customer.
         /// </summary>
         internal static string QPopulateCustomer {
             get {
                 return ResourceManager.GetString("QPopulateCustomer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM  Items.
+        /// </summary>
+        internal static string QPopulateTransaction {
+            get {
+                return ResourceManager.GetString("QPopulateTransaction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SELECT * FROM Items WHERE ItemType= &apos;{0}&apos;.
+        /// </summary>
+        internal static string QTransactionFilterByItem {
+            get {
+                return ResourceManager.GetString("QTransactionFilterByItem", resourceCulture);
             }
         }
     }

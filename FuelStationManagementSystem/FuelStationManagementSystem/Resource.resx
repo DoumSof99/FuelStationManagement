@@ -121,6 +121,12 @@
   <data name="QAddCustomer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qaddcustomer.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="QAddTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qaddtransaction.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QAddTransactionLines" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qaddtransactionlines.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="QDeleteCustomer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qdeletecustomer.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -129,5 +135,11 @@
   </data>
   <data name="QPopulateCustomer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>queries\qpopulatecustomer.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QPopulateTransaction" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qpopulatetransaction.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="QTransactionFilterByItem" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>queries\qtransactionfilterbyitem.sql;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
 </root>
