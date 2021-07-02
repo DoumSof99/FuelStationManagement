@@ -134,28 +134,35 @@ namespace FuelStationManagementSystem.WUI
         }
 
         private void AddTransaction()
-        {                              
-            Transaction newTransaction = new Transaction(
-                CustomerId,                
-                Convert.ToDecimal(ctrlDiscountValue.Text), 
-                Convert.ToDecimal(ctrlTotalValue.Text),
-                Convert.ToDecimal(ctrlTotalCost.Text)
-            );
-
-            try {
-                Con.Open();
-                string MyQeury = String.Format(Resource.QAddTransaction, newTransaction.ID, newTransaction.GetDate(), newTransaction.CustomerID, newTransaction.DiscountValue, newTransaction.TotalValue, newTransaction.TotalCost);
-                SqlCommand cmd = new SqlCommand(MyQeury, Con);
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Transaction Succesfully Added");
-                AddTransactionLines(newTransaction);
-                _TransactionLines.Clear();
-                Con.Close();
+        {
+            if (_TransactionLines.Count == 0)
+            {
+                MessageBox.Show("Please select Items!");
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-                Con.Close();
-            }         
+            else {
+                Transaction newTransaction = new Transaction(
+                    CustomerId,
+                    Convert.ToDecimal(ctrlDiscountValue.Text),
+                    Convert.ToDecimal(ctrlTotalValue.Text),
+                    Convert.ToDecimal(ctrlTotalCost.Text)
+                );
+
+                try {
+                    Con.Open();
+                    string MyQeury = String.Format(Resource.QAddTransaction, newTransaction.ID, newTransaction.GetDate(), newTransaction.CustomerID, newTransaction.DiscountValue, newTransaction.TotalValue, newTransaction.TotalCost);
+                    SqlCommand cmd = new SqlCommand(MyQeury, Con);
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Transaction Succesfully Added");
+                    
+                    Con.Close();
+                }
+                catch (Exception ex) {
+                    MessageBox.Show(ex.Message);
+                    Con.Close();
+                }
+
+                AddTransactionLines(newTransaction);
+            }          
         }
 
         private void AddTransactionLines(Transaction newTransaction) {
@@ -173,6 +180,8 @@ namespace FuelStationManagementSystem.WUI
                     Con.Close();
                 }
             }
+
+            _TransactionLines.Clear();
         }
 
         private void btnViewTransaction_Click(object sender, EventArgs e) {
