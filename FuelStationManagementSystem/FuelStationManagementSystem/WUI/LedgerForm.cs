@@ -71,7 +71,7 @@ namespace FuelStationManagementSystem.WUI {
             else
             {
                 total = expenses - income;
-                ctrlTotal.Text = Convert.ToString(total);
+                ctrlTotal.EditValue = Convert.ToString(total);
                 lblTotal.Text = "Total Loss:";
             }
         }

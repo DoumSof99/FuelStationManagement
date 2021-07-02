@@ -28,7 +28,6 @@ namespace FuelStationManagementSystem.WUI {
 
         private void btnAdd_Click(object sender, EventArgs e) {
             AddItem();
-            Utility.PopulateUtility(Con, Resource.QPopulateItem, gridItems);
         }
         private void btnEdit_Click(object sender, EventArgs e) {
             EditItem();
@@ -57,6 +56,7 @@ namespace FuelStationManagementSystem.WUI {
                 SqlCommand cmd = new SqlCommand(MyQuery, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Items Succesfully Added");
+                Utility.PopulateUtility(Con, Resource.QPopulateItem, gridItems);
                 Con.Close();
                
             }
