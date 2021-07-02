@@ -74,8 +74,6 @@ namespace FuelStationManagementSystem.WUI
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.ctrlCustomerID = new DevExpress.XtraEditors.TextEdit();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.gridItems2 = new DevExpress.XtraGrid.GridControl();
-            this.gridViewItems2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewItems)).BeginInit();
@@ -91,8 +89,6 @@ namespace FuelStationManagementSystem.WUI
             ((System.ComponentModel.ISupportInitialize)(this.ctrlTotalCost.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCustomerID.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridItems2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewItems2)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl2
@@ -149,11 +145,11 @@ namespace FuelStationManagementSystem.WUI
             // 
             this.gridItems.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gridItems.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(4);
-            this.gridItems.Location = new System.Drawing.Point(13, 251);
+            this.gridItems.Location = new System.Drawing.Point(13, 313);
             this.gridItems.MainView = this.gridViewItems;
             this.gridItems.Margin = new System.Windows.Forms.Padding(4);
             this.gridItems.Name = "gridItems";
-            this.gridItems.Size = new System.Drawing.Size(604, 178);
+            this.gridItems.Size = new System.Drawing.Size(604, 259);
             this.gridItems.TabIndex = 59;
             this.gridItems.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewItems});
@@ -227,7 +223,7 @@ namespace FuelStationManagementSystem.WUI
             // ctrlItemType
             // 
             this.ctrlItemType.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.ctrlItemType.Location = new System.Drawing.Point(335, 219);
+            this.ctrlItemType.Location = new System.Drawing.Point(341, 247);
             this.ctrlItemType.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlItemType.Name = "ctrlItemType";
             this.ctrlItemType.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
@@ -245,7 +241,7 @@ namespace FuelStationManagementSystem.WUI
             // 
             this.ctrlQuantity.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.ctrlQuantity.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(161)));
-            this.ctrlQuantity.Location = new System.Drawing.Point(102, 220);
+            this.ctrlQuantity.Location = new System.Drawing.Point(108, 248);
             this.ctrlQuantity.Margin = new System.Windows.Forms.Padding(4);
             this.ctrlQuantity.Name = "ctrlQuantity";
             this.ctrlQuantity.Size = new System.Drawing.Size(84, 27);
@@ -263,7 +259,7 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl4.Appearance.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelControl4.Appearance.Options.UseFont = true;
             this.labelControl4.Appearance.Options.UseForeColor = true;
-            this.labelControl4.Location = new System.Drawing.Point(9, 221);
+            this.labelControl4.Location = new System.Drawing.Point(15, 249);
             this.labelControl4.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(82, 22);
@@ -396,7 +392,7 @@ namespace FuelStationManagementSystem.WUI
             this.btnAddItem.Appearance.Options.UseBorderColor = true;
             this.btnAddItem.Appearance.Options.UseFont = true;
             this.btnAddItem.Appearance.Options.UseForeColor = true;
-            this.btnAddItem.Location = new System.Drawing.Point(194, 219);
+            this.btnAddItem.Location = new System.Drawing.Point(200, 247);
             this.btnAddItem.Margin = new System.Windows.Forms.Padding(4);
             this.btnAddItem.Name = "btnAddItem";
             this.btnAddItem.Size = new System.Drawing.Size(98, 28);
@@ -581,7 +577,7 @@ namespace FuelStationManagementSystem.WUI
             this.btnRefresh.Appearance.Options.UseBorderColor = true;
             this.btnRefresh.Appearance.Options.UseFont = true;
             this.btnRefresh.Appearance.Options.UseForeColor = true;
-            this.btnRefresh.Location = new System.Drawing.Point(500, 219);
+            this.btnRefresh.Location = new System.Drawing.Point(506, 247);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(111, 28);
             this.btnRefresh.TabIndex = 81;
@@ -609,7 +605,7 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl10.Appearance.ForeColor = System.Drawing.Color.RoyalBlue;
             this.labelControl10.Appearance.Options.UseFont = true;
             this.labelControl10.Appearance.Options.UseForeColor = true;
-            this.labelControl10.Location = new System.Drawing.Point(30, 171);
+            this.labelControl10.Location = new System.Drawing.Point(30, 189);
             this.labelControl10.Margin = new System.Windows.Forms.Padding(4);
             this.labelControl10.Name = "labelControl10";
             this.labelControl10.Size = new System.Drawing.Size(118, 33);
@@ -659,27 +655,11 @@ namespace FuelStationManagementSystem.WUI
             this.labelControl7.TabIndex = 91;
             this.labelControl7.Text = "Customer ID:";
             // 
-            // gridItems2
-            // 
-            this.gridItems2.Location = new System.Drawing.Point(13, 436);
-            this.gridItems2.MainView = this.gridViewItems2;
-            this.gridItems2.Name = "gridItems2";
-            this.gridItems2.Size = new System.Drawing.Size(604, 175);
-            this.gridItems2.TabIndex = 92;
-            this.gridItems2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridViewItems2});
-            // 
-            // gridViewItems2
-            // 
-            this.gridViewItems2.GridControl = this.gridItems2;
-            this.gridViewItems2.Name = "gridViewItems2";
-            // 
             // TransactionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1301, 650);
-            this.Controls.Add(this.gridItems2);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.separatorControl1);
             this.Controls.Add(this.ctrlCustomerID);
@@ -727,8 +707,6 @@ namespace FuelStationManagementSystem.WUI
             ((System.ComponentModel.ISupportInitialize)(this.ctrlTotalCost.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ctrlCustomerID.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridItems2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridViewItems2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -780,7 +758,5 @@ namespace FuelStationManagementSystem.WUI
         private DevExpress.XtraGrid.Columns.GridColumn ItemCost;
         private DevExpress.XtraGrid.Columns.GridColumn Cost;
         private DevExpress.XtraGrid.Columns.GridColumn ItemType;
-        private DevExpress.XtraGrid.GridControl gridItems2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridViewItems2;
     }
 }
