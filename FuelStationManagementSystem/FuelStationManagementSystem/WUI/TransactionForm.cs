@@ -148,14 +148,14 @@ namespace FuelStationManagementSystem.WUI
                 SqlCommand cmd = new SqlCommand(MyQeury, Con);
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Transaction Succesfully Added");
+                AddTransactionLines(newTransaction);
+                _TransactionLines.Clear();
                 Con.Close();
             }
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
                 Con.Close();
-            }
-
-            AddTransactionLines(newTransaction);
+            }         
         }
 
         private void AddTransactionLines(Transaction newTransaction) {
