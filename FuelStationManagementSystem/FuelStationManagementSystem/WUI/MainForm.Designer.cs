@@ -24,6 +24,7 @@ namespace FuelStationManagementSystem {
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent() {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +51,8 @@ namespace FuelStationManagementSystem {
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Crimson;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.customerToolStripMenuItem,
@@ -59,7 +62,7 @@ namespace FuelStationManagementSystem {
             this.ledgerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(751, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(751, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -67,14 +70,17 @@ namespace FuelStationManagementSystem {
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(39, 21);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // exitToolStripMenuItem
             // 
+            this.exitToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.exitToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(93, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // customerToolStripMenuItem
@@ -82,63 +88,72 @@ namespace FuelStationManagementSystem {
             this.customerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem,
             this.toolStripMenuItem1});
+            this.customerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.customerToolStripMenuItem.Name = "customerToolStripMenuItem";
-            this.customerToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.customerToolStripMenuItem.Size = new System.Drawing.Size(76, 21);
             this.customerToolStripMenuItem.Text = "Customer";
             // 
             // addToolStripMenuItem
             // 
+            this.addToolStripMenuItem.BackColor = System.Drawing.Color.Crimson;
+            this.addToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.addToolStripMenuItem.Name = "addToolStripMenuItem";
-            this.addToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            this.addToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem.Text = "Add/View";
             this.addToolStripMenuItem.Click += new System.EventHandler(this.addToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(123, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // employeeToolStripMenuItem
             // 
             this.employeeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem1,
             this.toolStripMenuItem2});
+            this.employeeToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.employeeToolStripMenuItem.Name = "employeeToolStripMenuItem";
-            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.employeeToolStripMenuItem.Size = new System.Drawing.Size(77, 21);
             this.employeeToolStripMenuItem.Text = "Employee";
             // 
             // addToolStripMenuItem1
             // 
+            this.addToolStripMenuItem1.BackColor = System.Drawing.Color.Crimson;
+            this.addToolStripMenuItem1.ForeColor = System.Drawing.Color.White;
             this.addToolStripMenuItem1.Name = "addToolStripMenuItem1";
-            this.addToolStripMenuItem1.Size = new System.Drawing.Size(126, 22);
+            this.addToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem1.Text = "Add/View";
             this.addToolStripMenuItem1.Click += new System.EventHandler(this.addToolStripMenuItem1_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(123, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
             // 
             // itemsToolStripMenuItem
             // 
             this.itemsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.addToolStripMenuItem2,
             this.toolStripMenuItem3});
+            this.itemsToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
-            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
+            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(51, 21);
             this.itemsToolStripMenuItem.Text = "Items";
             // 
             // addToolStripMenuItem2
             // 
+            this.addToolStripMenuItem2.BackColor = System.Drawing.Color.Crimson;
+            this.addToolStripMenuItem2.ForeColor = System.Drawing.Color.White;
             this.addToolStripMenuItem2.Name = "addToolStripMenuItem2";
-            this.addToolStripMenuItem2.Size = new System.Drawing.Size(126, 22);
+            this.addToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem2.Text = "Add/View";
             this.addToolStripMenuItem2.Click += new System.EventHandler(this.addToolStripMenuItem2_Click);
             // 
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(123, 6);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(177, 6);
             // 
             // transactionToolStripMenuItem
             // 
@@ -146,26 +161,33 @@ namespace FuelStationManagementSystem {
             this.addToolStripMenuItem3,
             this.toolStripMenuItem4,
             this.viewToolStripMenuItem3});
+            this.transactionToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.transactionToolStripMenuItem.Name = "transactionToolStripMenuItem";
-            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.transactionToolStripMenuItem.Size = new System.Drawing.Size(87, 21);
             this.transactionToolStripMenuItem.Text = "Transaction";
             // 
             // addToolStripMenuItem3
             // 
+            this.addToolStripMenuItem3.BackColor = System.Drawing.Color.Crimson;
+            this.addToolStripMenuItem3.ForeColor = System.Drawing.Color.White;
             this.addToolStripMenuItem3.Name = "addToolStripMenuItem3";
-            this.addToolStripMenuItem3.Size = new System.Drawing.Size(99, 22);
+            this.addToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.addToolStripMenuItem3.Text = "Add";
             this.addToolStripMenuItem3.Click += new System.EventHandler(this.addToolStripMenuItem3_Click);
             // 
             // toolStripMenuItem4
             // 
+            this.toolStripMenuItem4.BackColor = System.Drawing.Color.Crimson;
+            this.toolStripMenuItem4.ForeColor = System.Drawing.Color.White;
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(96, 6);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(177, 6);
             // 
             // viewToolStripMenuItem3
             // 
+            this.viewToolStripMenuItem3.BackColor = System.Drawing.Color.Crimson;
+            this.viewToolStripMenuItem3.ForeColor = System.Drawing.Color.White;
             this.viewToolStripMenuItem3.Name = "viewToolStripMenuItem3";
-            this.viewToolStripMenuItem3.Size = new System.Drawing.Size(99, 22);
+            this.viewToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
             this.viewToolStripMenuItem3.Text = "View";
             this.viewToolStripMenuItem3.Click += new System.EventHandler(this.viewToolStripMenuItem3_Click);
             // 
@@ -173,12 +195,15 @@ namespace FuelStationManagementSystem {
             // 
             this.ledgerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.viewToolStripMenuItem4});
+            this.ledgerToolStripMenuItem.ForeColor = System.Drawing.Color.White;
             this.ledgerToolStripMenuItem.Name = "ledgerToolStripMenuItem";
-            this.ledgerToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
+            this.ledgerToolStripMenuItem.Size = new System.Drawing.Size(61, 21);
             this.ledgerToolStripMenuItem.Text = "Ledger";
             // 
             // viewToolStripMenuItem4
             // 
+            this.viewToolStripMenuItem4.BackColor = System.Drawing.Color.Crimson;
+            this.viewToolStripMenuItem4.ForeColor = System.Drawing.Color.White;
             this.viewToolStripMenuItem4.Name = "viewToolStripMenuItem4";
             this.viewToolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
             this.viewToolStripMenuItem4.Text = "View";
@@ -188,16 +213,22 @@ namespace FuelStationManagementSystem {
             // 
             this.ctrlConnection.EditValue = "Server=(localdb)\\mssqllocaldb;Database=FuelStationManagement;Trusted_Connection=T" +
     "rue";
-            this.ctrlConnection.Location = new System.Drawing.Point(216, 112);
+            this.ctrlConnection.Location = new System.Drawing.Point(21, 72);
             this.ctrlConnection.Name = "ctrlConnection";
-            this.ctrlConnection.Size = new System.Drawing.Size(484, 20);
+            this.ctrlConnection.Properties.Appearance.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ctrlConnection.Properties.Appearance.Options.UseFont = true;
+            this.ctrlConnection.Size = new System.Drawing.Size(700, 24);
             this.ctrlConnection.TabIndex = 1;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(116, 115);
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Appearance.Options.UseForeColor = true;
+            this.labelControl1.Location = new System.Drawing.Point(21, 45);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(85, 13);
+            this.labelControl1.Size = new System.Drawing.Size(141, 21);
             this.labelControl1.TabIndex = 2;
             this.labelControl1.Text = "Connection String";
             // 
@@ -206,6 +237,8 @@ namespace FuelStationManagementSystem {
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(751, 579);
             this.Controls.Add(this.labelControl1);
             this.Controls.Add(this.ctrlConnection);
