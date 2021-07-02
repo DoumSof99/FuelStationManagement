@@ -231,6 +231,7 @@ namespace FuelStationManagementSystem.WUI
             this.ctrlItemType.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.ctrlItemType.Properties.Items.AddRange(new object[] {
+            "Fuel",
             "Products",
             "Services"});
             this.ctrlItemType.Size = new System.Drawing.Size(158, 28);
