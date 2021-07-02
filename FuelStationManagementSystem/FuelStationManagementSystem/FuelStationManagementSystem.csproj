@@ -264,6 +264,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\FeulStation.jpg" />
     <Content Include="Queries\QDeleteItems.sql" />
     <Content Include="Queries\QEditItems.sql" />
     <Content Include="Queries\QFillCustomerCard.sql" />
