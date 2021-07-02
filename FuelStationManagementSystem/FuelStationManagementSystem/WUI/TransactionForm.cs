@@ -70,7 +70,7 @@ namespace FuelStationManagementSystem.WUI
             if (itemType == "Fuel")
             {
                 _FuelCount += 1;
-  
+                itemQuantity = 1;
             }
 
             decimal itemPrice = decimal.Parse(Convert.ToString(gridViewItems.GetFocusedRowCellValue("Price")));
