@@ -78,7 +78,7 @@ namespace FuelStationManagementSystem.WUI
             decimal value = itemQuantity * itemPrice;
             decimal cost = itemQuantity * itemCost;
             
-            if (_FuelCount > 1 && itemPrice > 50) {
+            if (_FuelCount == 1 && itemPrice > 50) {
                 _HasDiscount = true;
             }
 
